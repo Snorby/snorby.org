@@ -9,6 +9,7 @@ DATAMAPPER = 'http://github.com/datamapper'
 DM_VERSION = '~> 1.0.2'
 
 gem 'rails',                  RAILS_VERSION
+gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'jquery-rails'
 gem 'bundler',                '~> 1.0.0'
 

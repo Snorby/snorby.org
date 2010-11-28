@@ -1,0 +1,10 @@
+--- 
+javascripts: 
+- snorbyorg:
+  - jquery
+  - rails
+  - snorbyorg
+stylesheets: 
+- snorbyorg: 
+  - grid
+  - snorbyorg

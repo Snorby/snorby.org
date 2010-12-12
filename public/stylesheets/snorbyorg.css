@@ -48,3 +48,91 @@ table {
 }
 
 /* @end */
+
+/* @group Wrapper */
+
+html,body{
+	background-color: #dbdbdb;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#wrapper{
+	min-height: 300px;
+	border-top: 1px solid #fff;
+}
+
+/* @end */
+
+/* @group Header */
+
+#header{
+	border-bottom: 1px solid #2c2c2c;
+	background: #39383a url(../images/welcome/header.png) no-repeat center bottom;
+}
+
+#header #header-inside{
+	height: 400px;
+	background: url(../images/welcome/2.png) no-repeat 0 top;
+}
+
+#header #menu{
+	background-color: rgba(18,18,18,0.25);
+	top: 0;
+	right: 0;
+	left: 0;
+	display: block;
+	position: relative;
+	height: 50px;
+	border-bottom: 1px solid #515151;
+}
+
+#header #menu ul{
+	
+}
+
+#header #menu #menu-inside{
+}
+
+#header #menu #menu-inside h1{
+	font-weight: bold;
+	text-decoration: none;
+	font-variant: normal;
+	float: left;
+	color: #fff;
+	line-height: 45px;
+	font-size: 2.2em;
+	letter-spacing: -3px;
+}
+
+#header #menu #menu-inside ul{
+	float: right;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	height: 50px;
+	line-height: 45px;
+}
+
+#header #menu #menu-inside li{
+	float: right;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	font-variant: normal;
+	margin-left: 20px;
+	font-size: 1.0em;
+}
+
+#header #menu #menu-inside li a{
+	color: #fff;
+	font-variant: normal;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#header #menu #menu-inside li a:hover{
+	color: #fd1e1a;
+}
+
+/* @end */

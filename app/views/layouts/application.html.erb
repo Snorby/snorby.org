@@ -20,13 +20,13 @@
 		
 		<div id='header'>
 			
-			<div id='header-inside' class='container_12'></div>
-			
 			<div id='menu'>
 				
-				<div id='menu-inside'>
+				<div id='menu-inside' class='container_12'>
 					
-					<ul class='container_12'>
+					<h1>Snorby</h1>
+					
+					<ul>
 						
 						<li class='first'><%= link_to "Submit Bugs", '#' %></li>
 						<li class=''><%= link_to "Docs & Wiki", '#' %></li>
@@ -39,11 +39,17 @@
 				
 			</div>
 			
+			<div id='header-inside' class='container_12'>
+				
+				
+				
+			</div>
+			
 		</div>
 		
 		<div id='wrapper'>
 			
-			<div id='content' class='container_12'>
+			<div id='content' class='container_6'>
 				
 				<%= yield %>
 				

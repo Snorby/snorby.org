@@ -28,10 +28,12 @@
 					
 					<ul>
 						
-						<li class='first'><%= link_to "Submit Bugs", '#' %></li>
-						<li class=''><%= link_to "Docs & Wiki", '#' %></li>
-						<li class=''><%= link_to "Fork It", '#' %></li>
-						<li class=''><%= link_to "Contribute", '#' %></li>
+						<li class='first'><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues' %></li>
+						<li class=''><%= link_to "DEMO", 'http://demo.snorby.org' %></li>
+						<li class=''><%= link_to "FAQ", 'https://github.com/Snorby/snorby/wiki/FAQ' %></li>
+						<li class=''><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki' %></li>
+						<li class=''><%= link_to "Fork It", 'https://github.com/Snorby/snorby' %></li>
+						<li class=''><%= link_to "Contribute", 'https://github.com/Snorby/snorby/wiki/_pages' %></li>
 						
 					</ul>
 					
@@ -39,11 +41,7 @@
 				
 			</div>
 			
-			<div id='header-inside' class='container_12'>
-				
-				
-				
-			</div>
+			<%= yield(:welcome) %>
 			
 		</div>
 		

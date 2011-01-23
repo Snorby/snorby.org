@@ -9,8 +9,8 @@
     <meta name="description" content="Snorby - All About Simplicity" />
     <link rel="icon" href="/favicon.png" type="image/png" />
 
-    <%= stylesheet_link_merged :snorbyorg %>
-		<%= javascript_include_merged :snorbyorg %>
+		<%= include_stylesheets :snorby, :media => 'all' %>
+		<%= include_javascripts :snorby %>
     <%= csrf_meta_tag %>
 
 		<%= yield(:header) %>
@@ -24,16 +24,15 @@
 				
 				<div id='menu-inside' class='container_12'>
 					
-					<h1>Snorby</h1>
+					<h1>Snorby <span>All About Simplicity</span></h1>
 					
 					<ul>
 						
 						<li class='first'><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues' %></li>
-						<li class=''><%= link_to "DEMO", 'http://demo.snorby.org' %></li>
-						<li class=''><%= link_to "FAQ", 'https://github.com/Snorby/snorby/wiki/FAQ' %></li>
+						<li class=''><%= link_to "Support", '#support', :class => 'scroll' %></li>
 						<li class=''><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki' %></li>
-						<li class=''><%= link_to "Fork It", 'https://github.com/Snorby/snorby' %></li>
-						<li class=''><%= link_to "Contribute", 'https://github.com/Snorby/snorby/wiki/_pages' %></li>
+						<li class=''><%= link_to "DEMO", '#demo', :class => 'scroll' %></li>
+						<li class=''><%= link_to "Installation", '#installation', :class => 'scroll' %></li>
 						
 					</ul>
 					
@@ -55,7 +54,9 @@
 			
 		</div>
 		
-		<div id='footer'>
+		<div id='footer' class='container_12'>
+			
+			Snorby - All About Simplicity  ↔ <%= link_to 'http://www.snorby.org', 'http://www.snorby.org' %> &copy; <%= Time.now.year %> The Snorby Team
 			
 		</div>
 		

@@ -1,0 +1,17 @@
+package_assets: on
+compress_assets: on
+gzip_assets: on
+javascript_compressor: yui
+embed_assets: off
+
+javascripts:
+  snorby:
+    - public/javascripts/jquery.js
+    - public/javascripts/rails.js
+    - public/javascripts/scrollTo.js
+    - public/javascripts/snorbyorg.js
+
+stylesheets:
+  snorby:
+    - public/stylesheets/grid.css
+    - public/stylesheets/snorbyorg.css

@@ -56,6 +56,16 @@ html,body{
 	font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+#footer{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+#footer a{
+	color: #7f7f7f;
+}
+
 #wrapper{
 	min-height: 300px;
 	border-top: 1px solid #fff;
@@ -94,7 +104,7 @@ html,body{
 	left: 0;
 	right: 0;
 	height: 130px;
-	background-color: rgba(11,11,11,0.71);
+	background-color: rgba(11,11,11,0.7);
 	border-top: 1px solid #000;
 }
 
@@ -122,9 +132,19 @@ html,body{
 	font-variant: normal;
 	float: left;
 	color: #fff;
-	line-height: 45px;
 	font-size: 2.2em;
 	letter-spacing: -3px;
+	overflow: visible;
+	display: block;
+	position: relative;
+	top: 5px;
+}
+
+#header #menu #menu-inside h1 span{
+	font-size: 12px;
+	letter-spacing: 0;
+	color: #aaa;
+	font-style: italic;
 }
 
 #header #menu #menu-inside ul{
@@ -196,8 +216,8 @@ html,body{
 	color: #161616;
 	display: block;
 	position: relative;
-	overflow: hidden;
-	margin-bottom: 10px;
+	overflow: visible;
+	margin-bottom: 15px;
 	text-shadow: #fff 0 1px 0px;
 	letter-spacing: -3px;
 	border-bottom: 3px solid #bdbdbd;
@@ -206,8 +226,7 @@ html,body{
 	font-variant: normal;
 	text-transform: capitalize;
 	font-size: 2.7em;
-	background: url(../images/icons/h1-arrow.png) no-repeat left center;
-	padding: 15px 15px 5px 25px;
+	padding: 15px 15px 5px 0;
 }
 
 .page h1 span{
@@ -217,6 +236,7 @@ html,body{
 }
 
 .page h1 div.top{
+	cursor: pointer;
 	float: right;
 	font-size: 15px;
 	letter-spacing: -1px;
@@ -238,11 +258,31 @@ html,body{
 	letter-spacing: -1px;
 	margin-bottom: 10px;
 	padding: 5px 5px 5px 0;
+	display: block;
+	position: relative;
+	overflow: visible;
+}
+
+.page h2 div.look{
+	cursor: pointer;
+	position: absolute;
+	display: block;
+	background: url(../images/icons/look.png) no-repeat;
+	width: 16px;
+	height: 16px;
+	right: 2px;
+	bottom: 7px;
 }
 
 /* @end */
 
 /* @group helpers */
+
+div.block{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
 
 .blank {color: #e5e5e5}
 

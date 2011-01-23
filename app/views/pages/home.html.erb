@@ -124,13 +124,159 @@
 		</h1>
 		
 		<div id='box' class='grid_12 alpha last'>
+			
+			<h2>Snorby Prerequisites</h2>
+			
 			<div class='content'>
+			
+				<ul class='grid_10'>
+					<li>
+						<strong>Snort</strong> (<%= link_to 'http://www.snort.org', 'http://www.snort.org', :target => '_blank' %>), 
+						<strong>Suricata</strong> (<%= link_to 'http://www.openinfosecfoundation.org', 'http://www.openinfosecfoundation.org', :target => '_blank' %>) or 
+						<strong>Sagan</strong> (<%= link_to 'http://sagan.softwink.com', 'http://sagan.softwink.com', :target => '_blank' %>)
+					</li>
+					<li><strong>GIT</strong> (<%= link_to 'http://git-scm.com', 'http://git-scm.com', :target => '_blank' %>)</li>
+					<li><strong>Ruby</strong> ~> 1.9.2 (<%= link_to 'http://www.ruby-lang.org', 'http://www.ruby-lang.org', :target => '_blank' %>)</li>
+					<li><strong>Rails</strong> ~> 3.0.0 (<%= link_to 'http://www.rubyonrails.com', 'http://www.rubyonrails.com', :target => '_blank' %>)</li>
+					<li><strong>ImageMagick</strong> ~> 6.6.4 (<%= link_to 'http://www.imagemagick.org', 'http://www.imagemagick.org', :target => '_blank' %>)</li>
+					<li><strong>Wkhtmltopdf</strong> (<%= link_to 'http://code.google.com/p/wkhtmltopdf', 'http://code.google.com/p/wkhtmltopdf', :target => '_blank' %>)</li>
+				</ul>
 				
-				
+				<div class='note grid_10'>
+					Most of the above can be installed via your packaging manager of choice. (apt, yum, brew, ports etc.) We are currently working on a few.
+				</div>
 				
 			</div>
+			
 		</div>
 		
+		<div id='box' class='grid_12 alpha last'>
+			
+			<h2>Get The Code</h2>
+			
+			<div class='content'>
+				
+				You can download the current version of Snorby from <%= link_to 'here', Snorbyorg::Versions.snorby_download %> in a `.zip` archive. Or you can pull the latest code from from the master branch on github.
+				
+				<pre class='code'>$ git clone http://github.com/Snorby/snorby.git</pre>
+				
+			</div>
+			
+		</div>
+		
+		
+		<div id='box' class='grid_12 alpha last'>
+			
+			<h2>Edit The Snorby Configurations</h2>
+			
+			<div class='content'>
+			
+				There are three configuration files that will need to be modified for everything to work correctly.<br />
+				<br />
+				
+				<strong>config/database.yml</strong><br />
+				
+<pre class='code'>
+# Snorby Database Configuration
+#
+# Please set your database password/user below
+#
+snorby: &snorby
+  adapter: mysql
+  username: root
+  password: MYSQLPASS
+  host: localhost
+
+development:
+  database: snorby
+  <<: *snorby
+
+test:
+  database: snorby
+  <<: *snorby
+
+production:
+  database: snorby
+  <<: *snorby</pre>
+				
+				<br />
+				
+				<strong>config/snorby_config.yml</strong><br />
+				
+<pre class='code'>
+development:
+  domain: localhost:3000
+  wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+
+test:
+  domain: localhost:3000
+  wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+
+production:
+  domain: localhost:3000
+  wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+</pre>
+
+				<br />
+
+				<strong>config/initializers/mail_config.rb</strong>
+				
+<pre class='code'>
+# Snorby Mail Configuration
+
+# # #
+# Gmail Example:
+# 
+# ActionMailer::Base.delivery_method = :smtp
+# ActionMailer::Base.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => 587,
+#   :domain               => "snorby.org",
+#   :user_name            => "snorby",
+#   :password             => "snorby",
+#   :authentication       => "plain",
+#   :enable_starttls_auto => true
+# }
+
+# # #
+# Sendmail Example:
+# 
+# ActionMailer::Base.delivery_method = :sendmail
+# ActionMailer::Base.sendmail_settings = {
+#   :location => '/usr/sbin/sendmail',
+#   :arguments => '-i -t'
+# }
+
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
+
+# Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+</pre>
+				
+			<div class='note grid_10'>This is usually only relevant if you want to use an external smtp server to send Snorby Mail. .e.g. Gmail</div>
+				
+			</div>
+			
+		</div>
+		
+		<div id='box' class='grid_12 alpha last'>
+			
+			<h2>Start Snorby</h2>
+			
+			<div class='content'>
+			
+			There are a few ways you can start/use snorby but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
+			<br />
+			
+			If you would like to just start Snorby to test or quickly play with use the following rails command in the Snorby root directory:<br />
+			
+			<pre class="code">$ rails server -e production</pre>
+				
+			<div class='note grid_10'>It is very important that you always remember to start Snorby in production mode.</div>
+				
+			</div>
+			
+		</div>
 		
 	</div>
 	
@@ -149,7 +295,9 @@
 				
 				<br />
 				
-				URL: <strong><%= link_to 'http://demo.snorby.org', 'http://demo.snorby.org' %></strong> | Username: <strong>demo@snorby.org</strong> | Password: <strong>snorby</strong>
+				URL: <strong><%= link_to 'http://demo.snorby.org', 'http://demo.snorby.org', :target => '_blank' %></strong> <br /> 
+				Username: <strong>demo@snorby.org</strong> <br />
+				Password: <strong>snorby</strong>
 			</div>
 
 		</div>
@@ -170,7 +318,7 @@
 			</h2>
 
 			<div class='content'>
-				<%= link_to 'http://groups.google.com/group/snorby', 'http://groups.google.com/group/snorby' %>
+				<%= link_to 'http://groups.google.com/group/snorby', 'http://groups.google.com/group/snorby', :target => '_blank' %>
 			</div>
 
 		</div>
@@ -178,11 +326,11 @@
 		<div id='box' class='grid_4 alpha'>
 
 			<h2>
-				#Snorby (IRC)
+				#Snorby IRC
 			</h2>
 
 			<div class='content'>
-				Server: <strong>irc.freenode.net</strong> - Channel: <strong>#snorby</strong>
+				<strong>#snorby</strong> on <strong>irc.freenode.net</strong>
 			</div>
 
 		</div>

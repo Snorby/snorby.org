@@ -190,6 +190,39 @@ html,body{
 	overflow: hidden;
 }
 
+.page a{
+	color: #aa1513;
+}
+
+.page a:hover{
+	color: #e22323;
+}
+
+.page a:active{
+	color: #000;
+}
+
+div.block{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.note{
+	background: url(../images/icons/note.png) no-repeat left 4px;
+	display: block;
+	position: relative;
+	overflow: visible;
+	line-height: 16px;
+	padding-left: 25px;
+	font-size: 12px;
+	color: #415058;
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-style: italic;
+}
+
 .page #box{
 	display: block;
 	position: relative;
@@ -210,6 +243,23 @@ html,body{
 	line-height: 1.5em;
 	border-bottom: 1px solid #c1c1c1;
 	padding-bottom: 20px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.page #box .content ul{
+	
+}
+
+.page #box .content ul li{
+	line-height: 25px;
+	background: url(../images/icons/list.png) no-repeat left 4px;
+	padding-left: 20px;
+}
+
+.page #box .content ul li a{
+	font-size: 12px;
 }
 
 .page h1{
@@ -277,12 +327,6 @@ html,body{
 /* @end */
 
 /* @group helpers */
-
-div.block{
-	display: block;
-	position: relative;
-	overflow: hidden;
-}
 
 .blank {color: #e5e5e5}
 
@@ -431,6 +475,23 @@ button.default,a.button.default {
 	-webkit-font-smoothing: subpixel-antialiased!important;
 	border: 1px solid #cbcbcb;
 	margin-right: 5px;
+}
+
+/* @end */
+
+/* @group Code */
+
+pre.code{
+	background-color: #000;
+	padding: 10px;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: normal;
+	color: #fff;
+	margin-top: 10px;
+	font-size: 12px;
+	font-style: normal;
+	border: 5px solid #747474;
 }
 
 /* @end */

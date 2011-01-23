@@ -39,10 +39,9 @@
 
 			<h2>
 				<%= image_tag('icons/metrics.png') %> Metrics & Reports
-				<div class='look'></div>
 			</h2>
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -52,10 +51,9 @@
 
 			<h2>
 				<%= image_tag('icons/classifications.png') %> Classifications
-				<div class='look'></div>
 			</h2>
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -65,11 +63,10 @@
 
 			<h2>
 				<%= image_tag('icons/full-packet.png') %> Full Packet
-				<div class='look'></div>
 			</h2>
 
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -80,10 +77,9 @@
 
 			<h2>
 				<%= image_tag('icons/settings.png') %> Custom Settings
-				<div class='look'></div>
 			</h2>
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -93,10 +89,9 @@
 
 			<h2>
 				<%= image_tag('icons/hot-keys.png') %> Hotkeys
-				<div class='look'></div>
 			</h2>
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -106,10 +101,9 @@
 
 			<h2>
 				<%= image_tag('icons/open-source.png') %> Open Source
-				<div class='look'></div>
 			</h2>
 
-			<div class='content'>
+			<div class='content lock'>
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</div>
 
@@ -124,6 +118,9 @@
 		</h1>
 		
 		<div id='box' class='grid_12 alpha last'>
+			
+				Currently there are two ways to install/deploy the Snorby web application. The first is to use the <%= link_to 'Insta-Snorby appliance', Snorbyorg::Versions.insta_snorby_download %> which is configured and ready to use the moment it's turned on. Second, is to install and configure Snorby from source which can sometimes be bit of a adventure. Below is a quick and dirty step-by-step tuturial for deploying Snorby from source however, be sure to also check the wiki to check for detailed information or your specific operating system<br />
+				<br />
 			
 			<h2>Snorby Prerequisites</h2>
 			
@@ -142,7 +139,7 @@
 					<li><strong>Wkhtmltopdf</strong> (<%= link_to 'http://code.google.com/p/wkhtmltopdf', 'http://code.google.com/p/wkhtmltopdf', :target => '_blank' %>)</li>
 				</ul>
 				
-				<div class='note grid_10'>
+				<div class='note grid_12'>
 					Most of the above can be installed via your packaging manager of choice. (apt, yum, brew, ports etc.) We are currently working on a few.
 				</div>
 				
@@ -174,7 +171,7 @@
 				There are three configuration files that will need to be modified for everything to work correctly.<br />
 				<br />
 				
-				<strong>config/database.yml</strong><br />
+				<h3>Snorby Database Configurations - config/database.yml</h3>
 				
 <pre class='code'>
 # Snorby Database Configuration
@@ -201,7 +198,7 @@ production:
 				
 				<br />
 				
-				<strong>config/snorby_config.yml</strong><br />
+				<h3>Snorby System Configurations - config/snorby_config.yml</h3>
 				
 <pre class='code'>
 development:
@@ -219,7 +216,7 @@ production:
 
 				<br />
 
-				<strong>config/initializers/mail_config.rb</strong>
+				<h3>Snorby Mail Configurations - config/initializers/mail_config.rb</h3>
 				
 <pre class='code'>
 # Snorby Mail Configuration
@@ -253,7 +250,7 @@ ActionMailer::Base.raise_delivery_errors = true
 # Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 </pre>
 				
-			<div class='note grid_10'>This is usually only relevant if you want to use an external smtp server to send Snorby Mail. .e.g. Gmail</div>
+			<div class='note grid_12'>This is usually only relevant if you want to use an external smtp server to send Snorby Mail. .e.g. Gmail</div>
 				
 			</div>
 			
@@ -272,7 +269,7 @@ ActionMailer::Base.raise_delivery_errors = true
 			
 			<pre class="code">$ rails server -e production</pre>
 				
-			<div class='note grid_10'>It is very important that you always remember to start Snorby in production mode.</div>
+			<div class='note grid_12'>It is very important that you always remember to start Snorby in production mode.</div>
 				
 			</div>
 			
@@ -295,9 +292,12 @@ ActionMailer::Base.raise_delivery_errors = true
 				
 				<br />
 				
-				URL: <strong><%= link_to 'http://demo.snorby.org', 'http://demo.snorby.org', :target => '_blank' %></strong> <br /> 
-				Username: <strong>demo@snorby.org</strong> <br />
-				Password: <strong>snorby</strong>
+				<ul>
+					<li>URL: <strong><%= link_to 'http://demo.snorby.org', 'http://demo.snorby.org', :target => '_blank' %></strong></li>
+					<li>Username: <strong>demo@snorby.org</strong></li>
+					<li>Password: <strong>snorby</strong></li>
+				</ul>
+				
 			</div>
 
 		</div>
@@ -314,7 +314,7 @@ ActionMailer::Base.raise_delivery_errors = true
 		<div id='box' class='grid_4 alpha'>
 
 			<h2>
-				Snorby Mailing List
+				Mailing List
 			</h2>
 
 			<div class='content'>
@@ -326,7 +326,7 @@ ActionMailer::Base.raise_delivery_errors = true
 		<div id='box' class='grid_4 alpha'>
 
 			<h2>
-				#Snorby IRC
+				Chatroom
 			</h2>
 
 			<div class='content'>
@@ -338,7 +338,7 @@ ActionMailer::Base.raise_delivery_errors = true
 		<div id='box' class='grid_4 alpha last'>
 
 			<h2>
-				Email
+				Email Address
 			</h2>
 
 			<div class='content'>

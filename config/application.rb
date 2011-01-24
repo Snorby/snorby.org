@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+ENV["RAILS_ASSET_ID"] = ""
+
 module Snorbyorg
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -34,6 +36,9 @@ module Snorbyorg
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
+    
+    config.action_controller.page_cache_directory = Rails.root.to_s + '/public/cache/'
+    
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.

@@ -16,9 +16,12 @@ doc
 pkg
 log/
 
+db/production.sqlite3
+
 ## PROJECT::SPECIFIC
 public/system/
 public/javascripts/snorby_packaged.js
+public/cache
 public/javascripts/all.js
 public/stylesheets/snorby_packaged.css
 tmp/pids/

@@ -101,7 +101,6 @@ html,body{
 #header #header-inside div.download{
 	position: absolute;
 	display: block;
-	overflow: hidden;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -255,7 +254,8 @@ div.block{
 }
 
 .page #box .content.lock{
-	height: 235px;
+	line-height: 1.8em;
+	height: 170px;
 }
 
 .page #box .content ul{
@@ -316,7 +316,7 @@ div.block{
 	text-align: left;
 	font: normal normal bold 20px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	letter-spacing: -1px;
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 	padding: 5px 5px 5px 0;
 	display: block;
 	position: relative;
@@ -510,6 +510,55 @@ pre.code{
 	font-size: 12px;
 	font-style: normal;
 	border: 5px solid #747474;
+}
+
+/* @end */
+
+/* @group Tooltip */
+
+.info-box {
+    position: relative;
+}
+
+.popup {
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#2b2b2b',endColorstr='#111111');
+  	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    display: none;
+	background-color: rgba(0,0,0,0.9);
+	z-index: 50;
+	border: 1px solid #4f4f4f;
+	color: #fff;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	font-variant: normal;
+	font-size: 12px;
+	padding: 10px;
+	line-height: 20px;
+	width: 240px;
+}
+
+.popup h4{
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	font-variant: normal;
+	text-shadow: #000 0 1px 0;
+	margin-bottom: 5px;
+}
+
+.popup a{
+	color: #ae1e1e;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	font-variant: normal;
 }
 
 /* @end */

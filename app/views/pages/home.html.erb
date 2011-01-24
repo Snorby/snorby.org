@@ -11,11 +11,33 @@
 			<div class='container_12'>
 				
 				<div class='grid_6'>
-					<%= link_to "Source Code #{Snorbyorg::Versions.snorby}", Snorbyorg::Versions.snorby_download, :class => 'download' %>
+					
+					<div class='info-box'>
+						<div class="popup">
+							<h4>Snorby Source Code</h4>
+							Version: <%= Snorbyorg::Versions.snorby %><br />
+							Date: 01/19/2011<br />
+							Size: 994KB<br />
+							<%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", '#' %>
+						</div>
+						<%= link_to "Source Code #{Snorbyorg::Versions.snorby}", Snorbyorg::Versions.snorby_download, :class => 'trigger download' %>
+					</div>
+					
 				</div>
 
 				<div class='grid_6'>
-					<%= link_to "Insta-Snorby #{Snorbyorg::Versions.insta_snorby}", Snorbyorg::Versions.insta_snorby_download, :class => 'download' %>
+					
+					<div class='info-box'>
+						<div class="popup">
+							<h4>Insta-Snorby</h4>
+							Version: <%= Snorbyorg::Versions.insta_snorby %><br />
+							Date: 01/19/2011<br />
+							Size: 994KB<br />
+							<%= link_to "View The #{Snorbyorg::Versions.insta_snorby} Release Notes", '#' %>
+						</div>
+						<%= link_to "Insta-Snorby #{Snorbyorg::Versions.insta_snorby}", Snorbyorg::Versions.insta_snorby_download, :class => 'trigger download' %>
+					</div>
+					
 				</div>
 				
 			</div>
@@ -42,7 +64,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				Snorby brings your existing and new network security monitoring data to life with a suite of beautiful, relevant, and most importantly, actionable metrics. Share data like sensor activity comparisons or your most active signatures directly with your constituents with daily, weekly, monthly, and ad-hoc PDF reports.
 			</div>
 
 		</div>
@@ -54,7 +76,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				With a simple keystroke or a mouse click, analysts can quickly classify an event into one of the many preconfigured classifications or into custom classifications relevant to a organization. Use classifications to organize events into helpful categories for follow-up investigations or for tuning your alert rulesets.
 			</div>
 
 		</div>
@@ -67,7 +89,7 @@
 
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				Unlike most network security monitoring applications, Snorby integrates with new and existing <%= link_to 'OpenFPC (http://www.openfpc.com)', 'http://www.openfpc.com', :target => '_blank' %>, <%= link_to "Solera DS Appliances", 'http://www.soleranetworks.com', :target => '_blank' %>, and <%= link_to "Solera's DeepSee", 'http://www.soleranetworks.com', :target => '_blank' %> installations to give analysts full packet and session data. Give yourself the critical context necessary to truly understand an alert and turn into an NSM hero!				
 			</div>
 
 
@@ -80,7 +102,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				While Snorby is designed to work out of the box, it is still our our most configurable release to date. Add custom severities or classifications, manage email notifications, and even extend functionality with third party products. Do it all from an intuitive administration menu, not with a text editor.
 			</div>
 
 		</div>
@@ -92,7 +114,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				Snorby features over 20 keyboard shortcuts allowing analysts to browse, view, and classify events without the use of a mouse (unprecedented for a web-based application). This gives analysts the responsiveness and efficiency of an installed client wrapped inside the simplicity and ease of a web browser.
 			</div>
 
 		</div>
@@ -104,7 +126,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				Snorby is 100% free and open source (as in beer and speech) and is licensed under version 3 of the permissive GNU General Public License. Snorby is actively and passionately developed and has ushered in a large and enthusiastic support community that is happy to help those with even the stickiest problems.
 			</div>
 
 		</div>
@@ -119,7 +141,7 @@
 		
 		<div id='box' class='grid_12 alpha last'>
 			
-				Currently there are two ways to install/deploy the Snorby web application. The first is to use the <%= link_to 'Insta-Snorby appliance', Snorbyorg::Versions.insta_snorby_download %> which is configured and ready to use the moment it's turned on. Second, is to install and configure Snorby from source which can sometimes be bit of a adventure. Below is a quick and dirty step-by-step tuturial for deploying Snorby from source however, be sure to also check the wiki to check for detailed information or your specific operating system<br />
+				Currently there are two ways to install/deploy the Snorby web application. The first option is to use <%= link_to 'Insta-Snorby', Snorbyorg::Versions.insta_snorby_download %> a free instant NSM appliance featuring Snorby <%= Snorbyorg::Versions.snorby %>, Snort, Barnyard, OpenFPC, and Pulled Pork that is configured and ready to use the moment it's turned on. Second, is to install and configure Snorby from source which can sometimes be bit of an adventure. Below is a quick and dirty step-by-step tutorial for deploying Snorby from source. Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for detailed information for your specific operating system<br />
 				<br />
 			
 			<h2>Snorby Prerequisites</h2>
@@ -140,7 +162,7 @@
 				</ul>
 				
 				<div class='note grid_12'>
-					Most of the above can be installed via your packaging manager of choice. (apt, yum, brew, ports etc.) We are currently working on a few.
+					Most of the above can be installed via your packaging manager of choice. (apt, yum, brew, ports etc.)
 				</div>
 				
 			</div>
@@ -153,7 +175,7 @@
 			
 			<div class='content'>
 				
-				You can download the current version of Snorby from <%= link_to 'here', Snorbyorg::Versions.snorby_download %> in a `.zip` archive. Or you can pull the latest code from from the master branch on github.
+				You can download the current version of Snorby <%= link_to 'here', Snorbyorg::Versions.snorby_download %> in a `.zip` archive. Or you can pull the latest code from from the master branch on github.
 				
 				<pre class='code'>$ git clone http://github.com/Snorby/snorby.git</pre>
 				
@@ -265,7 +287,7 @@ ActionMailer::Base.raise_delivery_errors = true
 			There are a few ways you can start/use snorby but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
 			<br />
 			
-			If you would like to just start Snorby to test or quickly play with use the following rails command in the Snorby root directory:<br />
+			If you would like to just start Snorby to test or quickly play with, use the following rails command in the Snorby root directory:<br />
 			
 			<pre class="code">$ rails server -e production</pre>
 				
@@ -288,7 +310,7 @@ ActionMailer::Base.raise_delivery_errors = true
 
 			<div class='content'>
 				
-				We have configured and deployed a full functional Snorby installation for your evaluation. The demo account has full administrative privileges so that all available snorby features are visible however, you will not be able to modify system settings.<br />
+				We have configured and deployed a fully functional Snorby installation for your evaluation. The demo account has full administrative privileges so that all available snorby features are visible; however, you will not be able to modify system settings.<br />
 				
 				<br />
 				

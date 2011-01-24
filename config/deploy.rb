@@ -1,4 +1,4 @@
-require 'bundler/capistrano'
+#require 'bundler/capistrano'
 
 set :application, "opensnorby"
 set :domain, '173.255.236.165'
@@ -9,7 +9,7 @@ role :db,  domain
 set :user, 'deploy'
 set :deploy_to, "/var/www/apps/#{application}"
 set :deply_via, :remote_cache
-set :use_sudo, false
+set :use_sudo, true
 
 set :scm, :git
 set :repository, "git@github.com:Snorby/snorby.org.git"

@@ -1,4 +1,4 @@
-require 'bundler/capistrano'
+#require 'bundler/capistrano'
 
 set :application, "opensnorby"
 set :domain, '173.255.236.165'

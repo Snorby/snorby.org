@@ -1,4 +1,4 @@
-#require 'bundler/capistrano'
+require 'bundler/capistrano'
 
 set :application, "opensnorby"
 set :domain, '173.255.236.165'
@@ -32,4 +32,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update', 'deploy:symlink_shared', 'deploy:restart'
+after 'deploy:update', 'deploy:symlink_shared'

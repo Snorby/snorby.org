@@ -12,7 +12,7 @@ set :deply_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
-set :repository, "git@github.com:mephux/#{application}.git"
+set :repository, "git@github.com:Snorby/snorby.org.git"
 set :branch, "master"
 
 namespace :deploy do

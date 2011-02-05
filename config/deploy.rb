@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 set :application, "opensnorby"
 set :domain, '173.255.236.165'
 role :app, domain
@@ -23,12 +25,6 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
-  
-  task :bundle do
-    desc "Run bundle install"
-    run "cd #{current_path}"
-    run "bundle install --path vendor/cache"
-  end
 
   task :symlink_shared do
     desc "Moving Shared File To Release Path..."
@@ -38,4 +34,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update', 'deploy:bundle', 'deploy:symlink_shared'
+after 'deploy:update', 'deploy:symlink_shared'

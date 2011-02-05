@@ -1,5 +1,3 @@
-require 'bundler/capistrano'
-
 set :application, "opensnorby"
 set :domain, '173.255.236.165'
 role :app, domain
@@ -9,7 +7,7 @@ role :db,  domain
 set :user, 'deploy'
 set :deploy_to, "/var/www/apps/#{application}"
 set :deply_via, :remote_cache
-set :use_sudo, true
+set :use_sudo, false
 
 set :scm, :git
 set :repository, "git@github.com:Snorby/snorby.org.git"
@@ -25,6 +23,12 @@ namespace :deploy do
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
   end
+  
+  task :bundle do
+    desc "Run bundle install"
+    run "cd #{current_path}"
+    run "bundle install --path vendor/cache"
+  end
 
   task :symlink_shared do
     desc "Moving Shared File To Release Path..."
@@ -34,4 +38,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update', 'deploy:symlink_shared'
+after 'deploy:update', 'deploy:bundle', 'deploy:symlink_shared'

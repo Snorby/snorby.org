@@ -9,6 +9,7 @@ javascripts:
     - public/javascripts/jquery.js
     - public/javascripts/rails.js
     - public/javascripts/scrollTo.js
+    - public/javascripts/twitter.js
     - public/javascripts/snorbyorg.js
 
 stylesheets:

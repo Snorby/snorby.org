@@ -90,6 +90,42 @@ html,body{
 	overflow: hidden;
 }
 
+#hero-heading{
+	display: block;
+	position: relative;
+	overflow: visible;
+	padding: 10px;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+#hero-heading h1{
+	color: #3c4c53;
+	text-decoration: none;
+	margin-bottom: 10px;
+	text-align: left;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: -1px;
+	padding: 10px 10px 7px 0;
+	font-size: 2.0em;
+}
+
+#hero-heading span{
+	color: #454245;
+	text-decoration: none;
+	font-variant: normal;
+	text-align: left;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding-right: 20px;
+	margin-bottom: 0;
+	padding-bottom: 10px;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
 #header #header-inside div.content{
 	height: 400px;
 	display: block;
@@ -559,6 +595,36 @@ pre.code{
 	font-style: normal;
 	text-decoration: none;
 	font-variant: normal;
+}
+
+/* @end */
+
+/* @group Twitter */
+
+#twitter{
+	font-size: 0.8em;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+#twitter ul#twitter_update_list{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+#twitter li{
+	border-bottom: 1px solid #d0d0d0;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	line-height: 20px;
+	font-style: normal;
+	color: #545454;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: normal;
+	padding-left: 5px;
 }
 
 /* @end */

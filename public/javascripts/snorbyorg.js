@@ -64,6 +64,18 @@ var Snorbyorg = {
 			return false;
 		});
 		
+	},
+	
+	twitter: function(){
+	  $("#twitter").getTwitter({
+	    userName: "mephux",
+	    numTweets: 6,
+	    loaderText: "Loading Snorby Tweets&hellip;",
+	    slideIn: false,
+	    showHeading: false,
+	    headingText: "Latest Tweets",
+	    showProfileLink: true
+	  });	
 	}
 	
 }
@@ -72,5 +84,6 @@ $(document).ready(function() {
 	
 	Snorbyorg.page_scroll();
 	Snorbyorg.tooltips();
+	Snorbyorg.twitter();
 	
 });

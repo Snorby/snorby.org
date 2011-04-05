@@ -78,7 +78,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
   jammit (~> 0.5.4)
   jquery-rails
   mysql2

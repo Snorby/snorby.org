@@ -5,7 +5,7 @@ module Snorbyorg
   module Versions
     
     def self.snorby
-      '2.3.0'
+      '2.3.1'
     end
     
     def self.insta_snorby

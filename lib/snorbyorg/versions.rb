@@ -5,7 +5,7 @@ module Snorbyorg
   module Versions
     
     def self.snorby
-      '2.3.2'
+      '2.3.3'
     end
     
     def self.insta_snorby
@@ -13,7 +13,7 @@ module Snorbyorg
     end
     
     def self.snorby_download
-      "https://github.com/Snorby/snorby/zipball/#{Snorbyorg::Versions.snorby}"
+      "https://github.com/Snorby/snorby/zipball/v#{Snorbyorg::Versions.snorby}"
     end
     
     def self.insta_snorby_download

@@ -230,15 +230,26 @@ production:
 <pre class='code'>
 development:
   domain: localhost:3000
-  wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+  wkhtmltopdf: /Users/mephux/.rvm/gems/ruby-1.9.2-p0/bin/wkhtmltopdf
+  mailer_sender: 'snorby@snorby.org'
+  rules: 
+    - "/Users/mephux/.snort/rules"
+    - "/Users/mephux/.snort/so_rules"
 
 test:
   domain: localhost:3000
   wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+  mailer_sender: 'snorby@snorby.org'
 
+# Change the production configuration 
+# for your environment.
 production:
-  domain: localhost:3000
-  wkhtmltopdf: /usr/local/bin/wkhtmltopdf
+  domain: 'demo.snorby.org'
+  wkhtmltopdf: /path/to/wkhtmltopdf
+  mailer_sender: 'snorby@snorby.org'
+  rules:
+    - "/path/to/rules/folder"
+    - "/path/to/so_rules/folder"
 </pre>
 
 				<br />

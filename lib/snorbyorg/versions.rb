@@ -9,7 +9,7 @@ module Snorbyorg
     end
     
     def self.insta_snorby
-      '0.7.0'
+      '0.8.0'
     end
     
     def self.snorby_download

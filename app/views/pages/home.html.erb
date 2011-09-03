@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div id="current-version">
+    <div id="current-version" data-href='https://github.com/Snorby/snorby/zipball/v<%= Snorbyorg::Versions.snorby %>' class='clickme'>
       <%= Snorbyorg::Versions.snorby %>
     </div>
     
@@ -28,7 +28,7 @@
         <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
       </div>
 
-      <button id="snorby" class='trigger'>
+      <button id="snorby" class='clickme trigger' data-href='https://github.com/Snorby/snorby/zipball/v<%= Snorbyorg::Versions.snorby %>'>
         Snorby Source
       </button>
 
@@ -44,12 +44,12 @@
         <%= link_to "View The #{Snorbyorg::Versions.insta_snorby} Release Notes", 'https://github.com/Snorby/insta-snorby/blob/master/ChangeLog.md', :target => '_blank' %>
       </div>
     
-      <button id="insta-snorby" class='trigger'>
+      <button id="insta-snorby" class='clickme trigger' data-href='http://www.snorby.org/Insta-Snorby-<%= Snorbyorg::Versions.insta_snorby %>.iso'>
         Insta-Snorby
       </button> 
     </div>
 
-      <button id="submit-bugs">
+      <button id="submit-bugs" class='clickme' data-href='https://github.com/Snorby/snorby/issues?milestone=&labels='>
         Submit Bugs
       </button>
 

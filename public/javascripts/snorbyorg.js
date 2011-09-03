@@ -97,4 +97,12 @@ $(document).ready(function() {
     };
   });
 
+
+  $('.clickme').live('click', function(event) {
+    event.preventDefault();
+    if ($(this).attr('data-href')) {
+      window.location = $(this).attr('data-href');
+    };
+  });
+
 });

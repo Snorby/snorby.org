@@ -10,6 +10,7 @@ javascripts:
     - public/javascripts/rails.js
     - public/javascripts/scrollTo.js
     - public/javascripts/twitter.js
+    - public/javascripts/modernizr.js
     - public/javascripts/snorbyorg.js
 
 stylesheets:

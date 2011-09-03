@@ -4,7 +4,7 @@
 var Snorbyorg = {
 	
 	tooltips: function(){
-		$('.info-box').each(function () {
+		$('.info-popup').each(function () {
 		    var distance = 10;
 		    var time = 250;
 		    var hideDelay = 500;
@@ -23,8 +23,8 @@ var Snorbyorg = {
 		        beingShown = true;
 		
 		        popup.css({
-		          top: -100,
-		          left: 30,
+		          top: -160,
+		          left: -58,
 		          display: 'block'
 		        }).animate({
 		          top: '-=' + distance + 'px',
@@ -85,5 +85,16 @@ $(document).ready(function() {
 	Snorbyorg.page_scroll();
 	Snorbyorg.tooltips();
 	Snorbyorg.twitter();
-	
+
+
+  $('#video').live('click', function(event) {
+    event.preventDefault();
+    var $video = $('div#intro-video');
+    if ($video.is(':visible')) {
+      $video.fadeOut('slow');
+    } else {
+      $video.fadeIn('slow');
+    };
+  });
+
 });

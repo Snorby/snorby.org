@@ -9,6 +9,8 @@
     <meta name="description" content="Snorby - All About Simplicity" />
     <link rel="icon" href="/favicon.png" type="image/png" />
 
+    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie|Muli' rel='stylesheet' type='text/css'>
+
 		<%= include_stylesheets :snorby, :media => 'all' %>
 		<%= include_javascripts :snorby %>
     <%= csrf_meta_tag %>
@@ -23,18 +25,18 @@
 			<div id='menu'>
 				
 				<div id='menu-inside' class='container_12'>
-					
-					<h1>Snorby <span>All About Simplicity</span></h1>
-					
+				
+          <div id="logo">
+            <a href="/"></a>
+          </div>
+	
 					<ul>
-						
-						<li class='first'><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues', :target => '_blank' %></li>
+						<li class='first'><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>						
+						<li class=''><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues', :target => '_blank' %></li>
 						<li class=''><%= link_to "Support", '#support', :class => 'scroll' %></li>
 						<li class=''><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki', :target => '_blank' %></li>
-						<li class=''><%= link_to "BLOG", 'https://www.lookycode.com', :target => '_blank' %></li>
 						<li class=''><%= link_to "DEMO", '#demo', :class => 'scroll' %></li>
 						<li class=''><%= link_to "Install", '#installation', :class => 'scroll' %></li>
-						
 					</ul>
 					
 				</div>
@@ -55,12 +57,64 @@
 			
 		</div>
 		
-		<div id='footer' class='container_12'>
-			
-			Snorby - All About Simplicity  ↔ <%= link_to 'http://www.snorby.org', 'http://www.snorby.org' %> &copy; <%= Time.now.year %> The Snorby Team
-			
+		<div id='footer'>
+      <div class="inside">
+
+        <ul class="column">
+          <li class='title'>Get Setup</li>
+          <li><%= link_to "Install", '#installation', :class => 'scroll' %></li>
+          <li><%= link_to "DEMO", '#demo', :class => 'scroll' %></li>
+          <li><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki', :target => '_blank' %></li>
+          <li><%= link_to "Support", '#support', :class => 'scroll' %></li>
+          <li><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues', :target => '_blank' %></li>
+          <li><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>						
+        </ul>
+
+        <ul class="column">
+          <li class="title">Follow The Project</li>
+
+          <li><%= link_to "@mephux on Twitter", 'https://www.twitter.com/mephux', :target => '_blank' %></li>
+          <li><%= link_to "freenode.net #snorby", 'irc://freenode.net/snorby', :target => '_blank' %></li>
+          <li><%= link_to "freenode.net #snorby", 'irc://freenode.net/snorby', :target => '_blank' %></li>
+          <li><%= link_to "Mailing List", 'http://groups.google.com/group/snorby', :target => '_blank' %></li>
+
+        </ul>
+
+        <ul class="column">
+          <li class="title">Support & Contribute</li>
+
+          <li><%= link_to "Snorby e-book", 'https://github.com/Snorby/snorby/wiki/Snorby-E-Book', :target => '_blank' %></li>
+          <li><%= link_to "Mailing List", 'http://groups.google.com/group/snorby', :target => '_blank' %></li>
+
+          <li><%= link_to "Fork It", 'https://github.com/Snorby/snorby', :target => '_blank' %></li>
+          <li><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues', :target => '_blank' %></li>
+          <li><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki', :target => '_blank' %></li>
+
+        </ul>
+
+        <ul class="column">
+          <li class="title">Props To The Following</li>
+
+          <li><%= link_to "Snort", 'http://www.snort.org', :target => '_blank' %></li>
+          <li><%= link_to "Sagan", 'http://sagan.softwink.com/', :target => '_blank' %></li>
+          <li><%= link_to "Suricata", 'http://www.openinfosecfoundation.org/', :target => '_blank' %></li>
+          <li><%= link_to "OpenFPC", 'http://www.openfpc.org/', :target => '_blank' %></li>
+          <li><%= link_to "Barnyard2", 'https://github.com/firnsy/barnyard2', :target => '_blank' %></li>
+          <li><%= link_to "Sguil", 'http://sguil.sourceforge.net/', :target => '_blank' %></li>
+        </ul>
+
+
+      </div>			
+
+
+      <div id="copyright">
+        Web Design by <a href='https://www.twitter.com/mephux'>Dustin Willis Webber</a>.
+        <strong>Community Mantained.</strong>
+        Snorby - All About Simplicity  ↔ <%= link_to 'http://www.snorby.org', 'http://www.snorby.org' %> &copy; 2009-<%= Time.now.year %> <a href='https://www.twitter.com/mephux'>Dustin Willis Webber.</a>.
+      </div>
+
 		</div>
-		
+
 		<script type="text/javascript">
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

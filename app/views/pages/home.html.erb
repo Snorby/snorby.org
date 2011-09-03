@@ -1,55 +1,67 @@
-<%= content_for :welcome do %>
 
-	<div id='header-inside'>
-		
-		<div class='content container_12'></div>
-		
-		<div class='download'>
-			
-			<div class='container_12'>
-				
-				<div class='grid_6'>
-					
-					<div class='info-box'>
-						<div class="popup">
-							<h4>Snorby Source Code</h4>
-							Version: <%= Snorbyorg::Versions.snorby %><br />
-							Date: 08/30/2011<br />
-							Size: 1.3 MB<br />
-              MD5: e2183734010962ca96ceb7f56e92efff<br />
-							<%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
-						</div>
-						<%= link_to "Source Code #{Snorbyorg::Versions.snorby}", Snorbyorg::Versions.snorby_download, :class => 'trigger download' %>
-					</div>
-					
-				</div>
+<div id="info-box">
+  <div class="inside">
+    
+    <div id="images"></div>
 
-				<div class='grid_6'>
-					
-					<div class='info-box'>
-						<div class="popup">
-							<h4>Insta-Snorby</h4>
-							Version: <%= Snorbyorg::Versions.insta_snorby %> (Snorby 2.3.8)<br />
-							Date: 08/25/2011<br />
-              Size: 484.2 MB<br />
-              MD5: 8cebe246d675f5e196afbe62ba3ab3cd<br />
-							<%= link_to "View The #{Snorbyorg::Versions.insta_snorby} Release Notes", 'https://github.com/Snorby/insta-snorby/blob/master/ChangeLog.md', :target => '_blank' %>
-						</div>
-						<%= link_to "Insta-Snorby #{Snorbyorg::Versions.insta_snorby}", Snorbyorg::Versions.insta_snorby_download, :class => 'trigger download' %>
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-		
-	</div>
 
-<% end %>
+    <div id="video" style=''>
+      <div id="intro-video" style='display:none;'>
+        <iframe src="http://player.vimeo.com/video/28555144?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="440" height="333" frameborder="0"></iframe>
+      </div>
+    </div>
 
-<div class='page container_12'>
-	
+    <div id="current-version">
+      <%= Snorbyorg::Versions.snorby %>
+    </div>
+    
+    <div id="downloads">
+
+     <div class="info-popup">
+
+      <div id='snorby-popup' class="popup">
+        <h4>Snorby Source Code</h4>
+        Version: <%= Snorbyorg::Versions.snorby %><br />
+        Date: 08/30/2011<br />
+        Size: 1.3 MB<br />
+        MD5: e2183734010962ca96ceb7f56e92efff<br />
+        <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+      </div>
+
+      <button id="snorby" class='trigger'>
+        Snorby Source
+      </button>
+
+    </div>
+
+    <div class="info-popup">
+      <div id='insta-snorby-popup' class="popup">
+        <h4>Insta-Snorby</h4>
+        Version: <%= Snorbyorg::Versions.insta_snorby %> (Snorby 2.3.8)<br />
+        Date: 08/25/2011<br />
+        Size: 484.2 MB<br />
+        MD5: 8cebe246d675f5e196afbe62ba3ab3cd<br />
+        <%= link_to "View The #{Snorbyorg::Versions.insta_snorby} Release Notes", 'https://github.com/Snorby/insta-snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+      </div>
+    
+      <button id="insta-snorby" class='trigger'>
+        Insta-Snorby
+      </button> 
+    </div>
+
+      <button id="submit-bugs">
+        Submit Bugs
+      </button>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="main">
+  <div class="main-inside">
+    <div class='page container_12'>
+
 	<div class="block">
 		
 		<h1 id='features'>
@@ -401,4 +413,6 @@ ActionMailer::Base.raise_delivery_errors = true
 		</div>
 	</div>
 	
+   </div>
+  </div>
 </div>

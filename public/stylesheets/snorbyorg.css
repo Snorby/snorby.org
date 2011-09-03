@@ -678,7 +678,7 @@ pre.code{
 	overflow: visible;
 	display: block;
 	line-height: 96px;
-	top: 293px;
+	top: 295px;
 	left: 7px;
 }
 
@@ -751,7 +751,7 @@ div#video{
 	width: 450px;
 	height: 350px;
 	margin: auto;
-	right: -9px;
+	right: -15px;
 	z-index: 99999;
 	background: url(../images/play-button.png) no-repeat;
 	top: 49px;
@@ -764,10 +764,10 @@ div#video{
 	overflow: hidden;
 	color: #e8e8e8;
 	letter-spacing: -2px;
-	top: 17px;
+	top: 18px;
 	font: normal bold 1.5em 'Reenie Beanie', cursive;
 	text-shadow: #000 0 1px 0;
-	right: 10px;
+	right: 0;
 }
 
 /* @end */

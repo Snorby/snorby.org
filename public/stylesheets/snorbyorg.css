@@ -632,8 +632,8 @@ pre.code{
 	position: relative;
 	overflow: visible;
 	border-bottom: 1px solid #000;
-	padding-bottom: 15px;
 	padding-top: 0;
+	padding-bottom: 19px;
 }
 
 #info-box .inside{
@@ -755,6 +755,19 @@ div#video{
 	z-index: 99999;
 	background: url(../images/play-button.png) no-repeat;
 	top: 49px;
+}
+
+#close-video{
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	color: #e8e8e8;
+	letter-spacing: -2px;
+	top: 17px;
+	font: normal bold 1.5em 'Reenie Beanie', cursive;
+	text-shadow: #000 0 1px 0;
+	right: 10px;
 }
 
 /* @end */

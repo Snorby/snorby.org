@@ -89,14 +89,33 @@ $(document).ready(function() {
 
   $('#video').live('click', function(event) {
     event.preventDefault();
+    var $close = $('<div id="close-video" />').html('X Close Video');
     var $video = $('div#intro-video');
+    var iframe = '<iframe src="http://player.vimeo.com/video/28555144?title' +
+    '=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="440" height=' + 
+    '"333" frameborder="0"></iframe>';
+
+    $('#close-video').remove();
+
     if ($video.is(':visible')) {
-      $video.fadeOut('slow');
+      $video.fadeOut('slow', function() {
+        $video.empty();
+      });
     } else {
-      $video.fadeIn('slow');
+      $video.fadeIn('slow', function() {
+        $('#info-box .inside').prepend($close);
+      }).html(iframe);
     };
   });
 
+  $('div#close-video').live('click', function(event) {
+    event.preventDefault();
+    var $video = $('div#intro-video');
+    $(this).remove();
+    $video.fadeOut('slow', function() {
+      $video.empty();
+    });
+  });
 
   $('.clickme').live('click', function(event) {
     event.preventDefault();

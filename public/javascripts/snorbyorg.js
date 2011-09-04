@@ -4,7 +4,7 @@
 var Snorbyorg = {
 	
 	tooltips: function(){
-		$('.info-popup').each(function () {
+		$('.show-popup').each(function () {
 		    var distance = 10;
 		    var time = 250;
 		    var hideDelay = 500;
@@ -122,6 +122,16 @@ $(document).ready(function() {
     if ($(this).attr('data-href')) {
       window.location = $(this).attr('data-href');
     };
+  });
+
+  $("button.clickme").hover(function () {
+      $('span', this).stop().animate({
+          opacity: 1
+      }, 300);
+  }, function () {
+      $('span', this).stop().animate({
+          opacity: 0
+      }, 400);
   });
 
 });

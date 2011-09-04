@@ -15,7 +15,7 @@
     
     <div id="downloads">
 
-     <div class="info-popup">
+     <div class="info-popup show-popup">
 
       <div id='snorby-popup' class="popup">
         <h4>Snorby Source Code</h4>
@@ -28,11 +28,12 @@
 
       <button id="snorby" class='clickme trigger' data-href='https://github.com/Snorby/snorby/zipball/v<%= Snorbyorg::Versions.snorby %>'>
         Snorby Source
+        <span></span>
       </button>
 
     </div>
 
-    <div class="info-popup">
+    <div class="info-popup show-popup">
       <div id='insta-snorby-popup' class="popup">
         <h4>Insta-Snorby</h4>
         Version: <%= Snorbyorg::Versions.insta_snorby %> (Snorby 2.3.8)<br />
@@ -44,12 +45,19 @@
     
       <button id="insta-snorby" class='clickme trigger' data-href='http://www.snorby.org/Insta-Snorby-<%= Snorbyorg::Versions.insta_snorby %>.iso'>
         Insta-Snorby
+        <span></span>
       </button> 
     </div>
 
-      <button id="submit-bugs" class='clickme' data-href='https://github.com/Snorby/snorby/issues?milestone=&labels='>
-        Submit Bugs
-      </button>
+
+     <div class="info-popup">
+
+        <button id="submit-bugs" class='clickme' data-href='https://github.com/Snorby/snorby/issues?milestone=&labels='>
+          Submit Bugs
+          <span></span>
+        </button>
+
+      </div>
 
     </div>
   </div>

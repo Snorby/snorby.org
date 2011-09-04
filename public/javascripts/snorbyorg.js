@@ -171,7 +171,7 @@ var Snorbyorg = {
 		
 		        popup.css({
 		          top: -160,
-		          left: -58,
+		          left: -54,
 		          display: 'block'
 		        }).animate({
 		          top: '-=' + distance + 'px',

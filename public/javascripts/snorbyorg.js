@@ -1,6 +1,153 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+var $style = $("<style/>").appendTo("head");
+
+var browserCSSPrefix = "",
+    animationEndEvent = "animationend";
+
+function openModal()
+{
+    transtitionSupport();
+    if( browserCSSPrefix == "" )
+    {
+    
+        $('#top_bar').animate(
+        {
+            'margin-top': '0'
+        }, 400, function() 
+        {
+        // Animation complete.
+        });
+    }
+    
+    else
+    {
+    
+        var animName = "openModal";
+    
+        insertCSSAnimation(animName, {
+        0 : prefix({ 
+        "margin-top" : "-27px", 
+        }),
+        50 : prefix({ 
+        "margin-top" : "0px",
+        "padding-top" : "25px",
+        }),
+        100 : prefix({ 
+        "margin-top" : "0px",
+        "padding-top" : "8px",
+        })
+        });
+        
+        $('#top-bar').css(prefix({
+        "animation":animName + " 1s cubic-bezier(.2,.6,.3,1)"
+        }))
+        .bind(animationEndEvent, function(e){
+        if(e.originalEvent.animationName == animName) 
+        {
+            $('#top-bar').css({ "margin-top" : "0" });
+        }
+        });
+    }
+    
+}
+
+function closeModal() {
+    transtitionSupport();
+    if( browserCSSPrefix == "" ) {
+        $('#top-bar').animate(
+        {
+            'margin-top':'-27px'
+        }, 400, function() 
+        {
+            showFanion();
+        });
+    } else {
+    
+        var animName = "closeModal";
+    
+        insertCSSAnimation(animName, {
+        0 : prefix({ 
+        "margin-top" : "0px",
+        "padding-top" : "8px", 
+        }),
+        50 : prefix({ 
+        "margin-top" : "0px",
+        "padding-top" : "25px",
+        }),
+        100 : prefix({ 
+        "margin-top" : "-27px",
+        "padding-top" : "8px",
+        })
+        });
+        
+        $('#top-bar').css(prefix({
+        "animation":animName + " 1s cubic-bezier(.2,.6,.3,1)"
+        }))
+        .bind(animationEndEvent, function(e){
+        if(e.originalEvent.animationName == animName) 
+        {
+            $('#top-bar').css({ "margin-top" : "-27px" });
+        }
+        });
+    }
+    
+}
+
+function prefix(obj) 
+{
+        if(obj instanceof Object) 
+        {
+            var dict = obj,
+            newDict = {};
+            $.each(dict,function(key , value) 
+            {
+                newDict[prefix(key)] = value;
+            });
+            return newDict;
+        }
+    
+    if([
+    "transform",
+    "animation",
+    "animation-name",
+    "animation-duration",
+    "animation-timing-function",
+    "animation-iteration-count",
+    "animation-direction",
+    "animation-delay"
+    ].indexOf(obj) > -1)
+    obj = browserCSSPrefix + obj;
+    return obj;
+}
+
+function insertCSSAnimation(name, properties) 
+{
+        var anim = "@" + browserCSSPrefix + "keyframes " + name + " {\n";
+        $.each(properties, function(progress, props) 
+        {
+            anim += "\t" + progress + "% {\n";
+            $.each(props,function(key , value) 
+            {
+                anim += "\t\t" + key + ":" + value + ";\n";
+            })
+            anim += "\t" + "}\n";
+        })
+        anim += "}\n";
+        $style.append(anim);
+};
+
+function transtitionSupport() {
+    var thisBody = document.body || document.documentElement,
+    thisStyle = thisBody.style,
+    support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
+    if( support == false )
+    { 
+        browserCSSPrefix = "";
+    }
+};
+
 var Snorbyorg = {
 	
 	tooltips: function(){
@@ -54,7 +201,7 @@ var Snorbyorg = {
 		
 		$('div.top').live('click', function(e) {
 			e.preventDefault();
-			$.scrollTo('#menu', 500);
+			$.scrollTo('#top-bar', 500);
 			return false;
 		});
 		
@@ -132,6 +279,29 @@ $(document).ready(function() {
       $('span', this).stop().animate({
           opacity: 0
       }, 400);
+  });
+
+
+       // Helpers
+    if($.browser.webkit) 
+    {
+        browserCSSPrefix = "-webkit-";
+        animationEndEvent = "webkitAnimationEnd";
+    }
+    else if($.browser.mozilla)
+    browserCSSPrefix = "-moz-";
+    else if($.browser.opera)
+    browserCSSPrefix = "-o-";
+    
+
+  window.setTimeout(function() {
+      openModal();
+  }, 500);
+            
+
+  $('a.close').live('click', function(event) {
+    event.preventDefault();
+    closeModal();
   });
 
 });

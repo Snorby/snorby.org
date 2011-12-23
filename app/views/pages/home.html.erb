@@ -1,4 +1,3 @@
-
 <div id="info-box">
   <div class="inside">
     
@@ -34,17 +33,17 @@
     </div>
 
     <div class="info-popup show-popup">
-      <div id='insta-snorby-popup' class="popup">
-        <h4>Insta-Snorby</h4>
-        Version: <%= Snorbyorg::Versions.insta_snorby %> (Snorby 2.3.8)<br />
-        Date: 08/25/2011<br />
-        Size: 484.2 MB<br />
-        MD5: 8cebe246d675f5e196afbe62ba3ab3cd<br />
-        <%= link_to "View The #{Snorbyorg::Versions.insta_snorby} Release Notes", 'https://github.com/Snorby/insta-snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+      <div id='security-onion-popup' class="popup">
+        <h4>Security Onion</h4>
+        Version: <%= Snorbyorg::Versions.security_onion %> (Snorby 2.3.11)<br />
+        Date: 12/23/2011<br />
+        Size: 1.2 GB<br />
+        MD5: aa4226e520cba686994c4609d1737d3<br />
+        <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %>
       </div>
     
-      <button id="insta-snorby" class='clickme trigger' data-href='http://www.snorby.org/Insta-Snorby-<%= Snorbyorg::Versions.insta_snorby %>.iso'>
-        Insta-Snorby
+      <button id="security-onion" class='clickme trigger' data-href='<%= Snorbyorg::Versions.security_onion_download %>'>
+        Security Onion 
         <span></span>
       </button> 
     </div>
@@ -166,7 +165,17 @@
 		
 		<div id='box' class='grid_12 alpha last'>
 			
-				Currently there are two ways to install/deploy the Snorby web application. The first option is to use <%= link_to 'Insta-Snorby', Snorbyorg::Versions.insta_snorby_download %> a free instant NSM appliance featuring Snorby <%= Snorbyorg::Versions.snorby %>, Snort, Barnyard, OpenFPC, and Pulled Pork that is configured and ready to use the moment it's turned on. Second, is to install and configure Snorby from source which can sometimes be bit of an adventure. Below is a quick and dirty step-by-step tutorial for deploying Snorby from source. Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for detailed information for your specific operating system<br />
+        Currently there are two ways to install/deploy the Snorby web application. 
+        
+        The first option is to install and configure Snorby from source.  
+
+        Second, is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %> a free instant 
+        NSM appliance featuring Snorby <%= Snorbyorg::Versions.snorby %>, Snort, Barnyard, OpenFPC, and Pulled Pork that 
+        is configured and ready to use the moment it's turned on.
+
+        Below is a quick and dirty step-by-step tutorial for deploying Snorby from source. 
+        Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for 
+        detailed information for your specific operating system<br />
 				<br />
 			
 			<h2>Snorby Prerequisites</h2>

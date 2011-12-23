@@ -162,6 +162,11 @@ var Snorbyorg = {
 		    var popup = $('.popup', this).css('opacity', 0);
 
 		    $([trigger.get(0), popup.get(0)]).mouseover(function () {
+
+          popup.css({
+            zIndex: 9999999
+          });
+
 		      if (hideDelayTimer) clearTimeout(hideDelayTimer);
 		
 		      if (beingShown || shown) {
@@ -170,6 +175,7 @@ var Snorbyorg = {
 		        beingShown = true;
 		
 		        popup.css({
+              zIndex: 999999,
 		          top: -160,
 		          left: -54,
 		          display: 'block'
@@ -182,6 +188,10 @@ var Snorbyorg = {
 		        });
 		      }
 		    }).mouseout(function () {
+          popup.css({
+            zIndex: 0
+          });
+
 		      if (hideDelayTimer) clearTimeout(hideDelayTimer);
 		      hideDelayTimer = setTimeout(function () {
 		        hideDelayTimer = null;

@@ -195,7 +195,7 @@ var Snorbyorg = {
 		      if (hideDelayTimer) clearTimeout(hideDelayTimer);
 		      hideDelayTimer = setTimeout(function () {
 		        hideDelayTimer = null;
-		        popup.animate({
+		        popup.stop().animate({
 		          top: '-=' + distance + 'px',
 		          opacity: 0
 		        }, time, 'swing', function () {

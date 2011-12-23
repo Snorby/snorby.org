@@ -17,7 +17,8 @@ module Snorbyorg
     end
     
     def self.security_onion_download
-      "http://sourceforge.net/projects/security-onion/files/security-onion-live-#{Snorbyorg::Versions.security_onion}.iso/download"
+      # "http://sourceforge.net/projects/security-onion/files/security-onion-live-#{Snorbyorg::Versions.security_onion}.iso/download"
+      "http://sourceforge.net/projects/security-onion/files/latest/download?source=files"
     end
     
   end

@@ -5,7 +5,7 @@ module Snorbyorg
   module Versions
     
     def self.snorby
-      '2.3.12'
+      '2.3.13'
     end
     
     def self.security_onion

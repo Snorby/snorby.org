@@ -29,7 +29,7 @@ namespace :deploy do
   task :symlink_shared do
     desc "Moving Shared File To Release Path..."
     run "ln -nfs #{shared_path}/config/database.yml #{current_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/Insta-Snorby-0.6.0.iso #{current_path}/public/Insta-Snorby-0.6.0.iso"
+    run "ln -nfs #{shared_path}/Insta-Snorby-0.9.0.iso #{current_path}/public/Insta-Snorby-0.9.0.iso"
     run "ln -nfs #{shared_path}/files #{current_path}/public/files"
   end
 end

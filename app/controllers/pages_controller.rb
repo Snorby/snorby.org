@@ -6,4 +6,12 @@ class PagesController < ApplicationController
     
   end
 
+  def version
+    render :json => {
+      :version => Snorbyorg::Versions.snorby,
+      :changeLog => 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', 
+      :download => Snorbyorg::Versions.snorby_download
+    }
+  end
+
 end

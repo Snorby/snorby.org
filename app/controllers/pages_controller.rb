@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   caches_page :home
 
   def home
-    
   end
 
   def version
@@ -11,7 +10,7 @@ class PagesController < ApplicationController
       :version => Snorbyorg::Versions.snorby,
       :changeLog => 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', 
       :download => Snorbyorg::Versions.snorby_download
-    }
+    }, :callback => params[:callback]
   end
 
 end

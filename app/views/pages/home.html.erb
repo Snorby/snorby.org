@@ -18,10 +18,10 @@
 
       <div id='snorby-popup' class="popup">
         <h4>Snorby Source Code</h4>
-        Version: <%= Snorbyorg::Versions.snorby %><br />
-        Date: 02/16/2012<br />
-        Size: 2.1 MB<br />
-        MD5: 1db04dca4e65ca3fb6aa70ae8edbb2af<br />
+        Version: <%= Snorbyorg::Versions.data[:version] %><br />
+        Date: <%= Snorbyorg::Versions.data[:date] %><br />
+        Size: <%= Snorbyorg::Versions.data[:size] %><br />
+        MD5: <%= Snorbyorg::Versions.data[:md5] %><br />
         <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
       </div>
 

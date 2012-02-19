@@ -3,7 +3,18 @@ module Snorbyorg
   VERSION='0.1.0'
   
   module Versions
-    
+   
+    def self.data
+      @data ||= {
+        :md5 => '1db04dca4e65ca3fb6aa70ae8edbb2af',
+        :date => '02/16/2012',
+        :size => '2.1MB',
+        :version => self.snorby
+      }
+
+      @data
+    end
+
     def self.snorby
       '2.3.14'
     end

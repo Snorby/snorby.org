@@ -6,9 +6,9 @@ module Snorbyorg
    
     def self.data
       @data ||= {
-        :md5 => '1db04dca4e65ca3fb6aa70ae8edbb2af',
-        :date => '02/16/2012',
-        :size => '2.1MB',
+        :md5 => '77cca4056c0184e95915826191749fa0',
+        :date => '02/20/2012',
+        :size => '1.5MB',
         :version => self.snorby
       }
 
@@ -16,7 +16,7 @@ module Snorbyorg
     end
 
     def self.snorby
-      '2.3.14'
+      '2.4.0'
     end
     
     def self.security_onion

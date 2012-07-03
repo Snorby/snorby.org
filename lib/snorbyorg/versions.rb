@@ -20,7 +20,7 @@ module Snorbyorg
     end
     
     def self.security_onion
-      '20111222'
+      ''
     end
     
     def self.snorby_download
@@ -29,7 +29,8 @@ module Snorbyorg
     
     def self.security_onion_download
       # "http://sourceforge.net/projects/security-onion/files/security-onion-live-#{Snorbyorg::Versions.security_onion}.iso/download"
-      "http://sourceforge.net/projects/security-onion/files/latest/download?source=files"
+      # "http://sourceforge.net/projects/security-onion/files/latest/download?source=files"
+      "http://code.google.com/p/security-onion/wiki/Installation"
     end
     
   end

@@ -348,6 +348,18 @@ div.block{
 	font: normal bold 3.0em 'Reenie Beanie', cursive;
 }
 
+div.snorby-source-code h1 a,
+div.snorby-source-code a{
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	font-variant: normal;
+	color: #000 !important;
+	text-indent: 0;
+	letter-spacing: 0;
+	word-spacing: 0;
+}
+
 .page h1 span{
 	font-variant: normal;
 	color: #475662;

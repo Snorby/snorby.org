@@ -35,11 +35,12 @@
     <div class="info-popup show-popup">
       <div id='security-onion-popup' class="popup">
         <h4>Security Onion</h4>
-        Version: <%= Snorbyorg::Versions.security_onion %> (Snorby 2.3.11)<br />
-        Date: 12/23/2011<br />
-        Size: 1.2 GB<br />
-        MD5: aa4226e520cba686994c4609d1737d3<br />
-        <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %>
+
+        For more information on Security Onion <br /> and download links, please visit <br />the following url.<br />
+
+        <br />
+        <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %><br />
+
       </div>
     
       <button id="security-onion" class='clickme trigger' data-href='<%= Snorbyorg::Versions.security_onion_download %>'>
@@ -169,9 +170,9 @@
         
         The first option is to install and configure Snorby from source.  
 
-        Second, is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %> a free instant 
-        NSM appliance featuring Snorby <%= Snorbyorg::Versions.snorby %>, Snort, Barnyard, OpenFPC, and Pulled Pork that 
-        is configured and ready to use the moment it's turned on.
+        Second, is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %> a free instant NSM appliance
+        featuring Snorby 2.5.1, Snort/Suricata, Barnyard, Daemonlogger, and Pulled Pork. Security Onion does not yet support the Snorby full packet capture api but is
+        in the works. To have full packet capabilities with Snorby we suggest installing from source and using OpenFPC or StreamDB.
 
         Below is a quick and dirty step-by-step tutorial for deploying Snorby from source. 
         Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for 
@@ -205,14 +206,20 @@
 		
 		<div id='box' class='grid_12 alpha last'>
 			
-			<h2>Get The Code</h2>
+			<h2>Get The Code & Dependencies</h2>
 			
 			<div class='content'>
 				
 				You can download the current version of Snorby <%= link_to 'here', Snorbyorg::Versions.snorby_download %> in a `.zip` archive. Or you can pull the latest code from from the master branch on github.
 				
 				<pre class='code'>$ git clone http://github.com/Snorby/snorby.git</pre>
-				
+
+        Once snorby has be downloaded successfully you will need to install a few dependencies before you start to edit the configuration files.
+
+        <pre class='code'>cd snorby && bundle install</pre>
+
+        <div class='note grid_12'>This assumes ruby and ruby gems is installed properly. If bundler is not found `gem install bundler`</div>
+
 			</div>
 			
 		</div>
@@ -322,28 +329,61 @@ ActionMailer::Base.raise_delivery_errors = true
 			</div>
 			
 		</div>
-		
+
 		<div id='box' class='grid_12 alpha last'>
 			
 			<h2>Start Snorby</h2>
-			
+
 			<div class='content'>
-			
+
+      First we need to setup the database and the snorby defaults.
+
+      <pre class="code">bundle exec rake snorby:setup</pre>
+
+      <br />
+      Once this is completed you can start Snorby using the following commands.
+
+      <pre class="code">bundle exec rails server -e production</pre>
+      <pre class="code">ruby script/delayed_job start RAILS_ENV=production</pre>
+	
+      <div class='note grid_12'>It is very important that you always remember to start Snorby in production mode.</div><br />
+
+      <br />
+      <br />
+      <p>
+      Snorby ships with an administrator account preconfigured. The default credentials are listed below. Please remember you change the password/email address or remove this accout if it's not needed.
+      </p>
+
+      <br />
+
+      <ul>
+        <li>Username: <strong>snorby@snorby.org</strong></li>
+        <li>Password: <strong>snorby</strong></li>
+      </ul> 
+
+      <br />
+
 			There are a few ways you can start/use snorby but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
 			<br />
 			
-			If you would like to just start Snorby to test or quickly play with, use the following rails command in the Snorby root directory:<br />
-			
-			<pre class="code">$ rails server -e production</pre>
-				
-			<div class='note grid_12'>It is very important that you always remember to start Snorby in production mode.</div>
-				
+
 			</div>
 			
 		</div>
 		
 	</div>
-	
+
+  <div class="block">
+		
+		<h1 id='source'>
+			Snorby <span>Source</span> Code
+			<div class='top'></div>
+		</h1>
+		
+    <div id='box' class='snorby-source-code'>
+    </div>
+  </div>
+
 	<div class='block'>
 		
 		<h1 id='demo'>

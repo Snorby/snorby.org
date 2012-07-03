@@ -8,6 +8,7 @@ javascripts:
   snorby:
     - public/javascripts/jquery.js
     - public/javascripts/rails.js
+    - public/javascripts/repo.js
     - public/javascripts/scrollTo.js
     - public/javascripts/twitter.js
     - public/javascripts/modernizr.js

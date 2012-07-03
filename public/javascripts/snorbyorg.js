@@ -314,4 +314,6 @@ $(document).ready(function() {
     closeModal();
   });
 
+  $('body div.snorby-source-code').repo({ user: 'snorby', name: 'snorby', branch: 'master' });
+
 });

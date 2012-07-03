@@ -96,6 +96,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  Platform
   capistrano
   highline
   jammit (~> 0.6.3)

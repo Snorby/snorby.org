@@ -16,4 +16,8 @@ class PagesController < ApplicationController
     }, :callback => params[:callback]
   end
 
+  def redirect
+    redirect_to "https://github.com/Snorby/snorby/zipball/v#{Snorbyorg::Versions.snorby}"
+  end
+
 end

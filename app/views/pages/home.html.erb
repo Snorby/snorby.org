@@ -8,7 +8,7 @@
       <div id="intro-video" style='display:none;'></div>
     </div>
 
-    <div id="current-version" data-href='https://github.com/Snorby/snorby/zipball/v<%= Snorbyorg::Versions.snorby %>' class='clickme'>
+    <div id="current-version" data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>' class='clickme'>
       <%= Snorbyorg::Versions.snorby %>
     </div>
     
@@ -25,7 +25,7 @@
         <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
       </div>
 
-      <button id="snorby" class='clickme trigger' data-href='https://github.com/Snorby/snorby/zipball/v<%= Snorbyorg::Versions.snorby %>'>
+      <button id="snorby" class='clickme trigger' data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'>
         Snorby Source
         <span></span>
       </button>

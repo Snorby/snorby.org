@@ -4,6 +4,7 @@ Snorbyorg::Application.routes.draw do
   end
 
   match "/version", :controller => 'Pages', :action => 'version'
+  match "/redirect", :controller => 'Pages', :action => 'redirect'
 
   root :to => "pages#home"
 

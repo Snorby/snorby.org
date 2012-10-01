@@ -33,14 +33,14 @@
 
         // add Twitter profile link to container element
         if (o.showProfileLink) {
-            $(this).append('<a id="profileLink" href="http://twitter.com/'+o.userName+'">http://twitter.com/'+o.userName+'</a>');
+            $(this).append('<a id="profileLink" href="https://twitter.com/'+o.userName+'">http://twitter.com/'+o.userName+'</a>');
         }
 
         // show container element
         $(this).show();
 
-        $.getScript("http://twitter.com/javascripts/blogger.js");
-        $.getScript("http://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=twitterCallback2&count="+o.numTweets, function() {
+        $.getScript("https://twitter.com/javascripts/blogger.js");
+        $.getScript("https://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=twitterCallback2&count="+o.numTweets, function() {
             // remove preLoader from container element
             $(pl).remove();
 

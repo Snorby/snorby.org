@@ -1,69 +1,14 @@
 <div id="info-box">
   <div class="inside">
-    
-    <div id="images"></div>
-
-
-    <div id="video" style=''>
-      <div id="intro-video" style='display:none;'></div>
-    </div>
-
-    <div id="current-version" data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>' class='clickme'>
-      <%= Snorbyorg::Versions.snorby %>
-    </div>
-    
-    <div id="downloads">
-
-     <div class="info-popup show-popup">
-
-      <div id='snorby-popup' class="popup">
-        <h4>Snorby Source Code</h4>
-        Version: <%= Snorbyorg::Versions.data[:version] %><br />
-        Date: <%= Snorbyorg::Versions.data[:date] %><br />
-        Size: <%= Snorbyorg::Versions.data[:size] %><br />
-        MD5: <%= Snorbyorg::Versions.data[:md5] %><br />
-        <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+    <div id="slides">
+      <div class="slides_container">
+        <div><%= render 'pages/slide_snorby' %></div>
+        <div><%= render 'pages/slide_iphone' %></div>
+        <div><%= render 'pages/slide_packetstash' %></div>
       </div>
-
-      <button id="snorby" class='clickme trigger' data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'>
-        Snorby Source
-        <span></span>
-      </button>
-
-    </div>
-
-    <div class="info-popup show-popup">
-      <div id='security-onion-popup' class="popup">
-        <h4>Security Onion</h4>
-
-        For more information on Security Onion <br /> and download links, please visit <br />the following url.<br />
-
-        <br />
-        <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %><br />
-
-      </div>
-    
-      <button id="security-onion" class='clickme trigger' data-href='/redirect-security-onion?security_onion=true'>
-        Security Onion 
-        <span></span>
-      </button> 
-    </div>
-
-
-     <div class="info-popup">
-
-        <button id="submit-bugs" class='clickme' data-href='https://github.com/Snorby/snorby/issues?milestone=&labels='>
-          Submit Bugs
-          <span></span>
-        </button>
-
-      </div>
-
     </div>
   </div>
 </div>
-
-
 <div id="main">
   <div class="main-inside">
     <div class='page container_12'>
@@ -86,7 +31,7 @@
 
 
 	<div class="block">
-		
+
 		<h1 id='features'>
 			<span>Snorby</span> Features
 			<div class='top'></div>
@@ -105,7 +50,7 @@
 			</h2>
 
 			<div class='content lock'>
-				Snorby brings your existing and new network security monitoring data to life with a suite of beautiful, relevant, and most importantly, actionable metrics. Share data like sensor activity comparisons or your most active signatures directly with your constituents with daily, weekly, monthly, and ad-hoc PDF reports.
+				Snorby brings your existing and new network security monitoring data to life with a suite of beautiful, relevant, and, most importantly, actionable metrics. Share data like sensor activity comparisons or your most active signatures directly with your constituents with daily, weekly, monthly, and ad-hoc PDF reports.
 			</div>
 
 		</div>
@@ -130,7 +75,7 @@
 
 
 			<div class='content lock'>
-				Unlike most network security monitoring applications, Snorby integrates with new and existing <%= link_to 'OpenFPC', 'http://www.openfpc.org', :target => '_blank' %>, <%= link_to "Solera DS Appliances", 'http://www.soleranetworks.com', :target => '_blank' %>, and <%= link_to "Solera's DeepSee", 'http://www.soleranetworks.com', :target => '_blank' %> installations to give analysts full packet and session data. Give yourself the critical context necessary to truly understand an alert and turn into an NSM hero!				
+				Unlike most network security monitoring applications, Snorby integrates with new and existing <%= link_to 'OpenFPC', 'http://www.openfpc.org', :target => '_blank' %>, <%= link_to "Solera DS Appliances", 'http://www.soleranetworks.com', :target => '_blank' %>, and <%= link_to "Solera's DeepSee", 'http://www.soleranetworks.com', :target => '_blank' %> installations to give analysts full packet and session data. Give yourself the critical context necessary to truly understand an alert and turn into an NSM hero!
 			</div>
 
 
@@ -167,43 +112,43 @@
 			</h2>
 
 			<div class='content lock'>
-				Snorby is 100% open source! The snorby* source code is licensed under version 3 of the permissive GNU General Public License. Snorby uses <%= link_to "highcharts", 'http://www.highcharts.com' %> for metrics and reporting and has it's own licensing which can be found <%= link_to "here", 'http://www.highcharts.com/license' %>.
+				Snorby is 100% open source! The snorby* source code is licensed under version 3 of the permissive GNU General Public License. Snorby uses <%= link_to "highcharts", 'http://www.highcharts.com' %> for metrics and reporting and has its own licensing which can be found <%= link_to "here", 'http://www.highcharts.com/license' %>.
 				Snorby is actively and passionately developed and has ushered in a large and enthusiastic support community.
 			</div>
 
 		</div>
 	</div>
-	
+
 	<div class="block">
-		
+
 		<h1 id='installation'>
 			<span>Installing</span> Snorby
 			<div class='top'></div>
 		</h1>
-		
-		<div id='box' class='grid_12 alpha last'>
-			
-        Currently there are two ways to install/deploy the Snorby web application. 
-        
-        The first option is to install and configure Snorby from source.  
 
-        Second, is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %> a free instant NSM appliance
+		<div id='box' class='grid_12 alpha last'>
+
+        Currently there are two ways to install/deploy the Snorby web application.
+
+        The first option is to install and configure Snorby from source.
+
+        Second is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %>, a free instant NSM appliance
         featuring Snorby 2.5.1, Snort/Suricata, Barnyard, Daemonlogger, and Pulled Pork. Security Onion does not yet support the Snorby full packet capture api but is
         in the works. To have full packet capabilities with Snorby we suggest installing from source and using OpenFPC or StreamDB.
 
-        Below is a quick and dirty step-by-step tutorial for deploying Snorby from source. 
-        Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for 
+        Below is a quick and dirty step-by-step tutorial for deploying Snorby from source.
+        Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for
         detailed information for your specific operating system<br />
 				<br />
-			
+
 			<h2>Snorby Prerequisites</h2>
-			
+
 			<div class='content'>
-			
+
 				<ul class='grid_10'>
 					<li>
-						<strong>Snort</strong> (<%= link_to 'http://www.snort.org', 'http://www.snort.org', :target => '_blank' %>), 
-						<strong>Suricata</strong> (<%= link_to 'http://www.openinfosecfoundation.org', 'http://www.openinfosecfoundation.org', :target => '_blank' %>) or 
+						<strong>Snort</strong> (<%= link_to 'http://www.snort.org', 'http://www.snort.org', :target => '_blank' %>),
+						<strong>Suricata</strong> (<%= link_to 'http://www.openinfosecfoundation.org', 'http://www.openinfosecfoundation.org', :target => '_blank' %>) or
 						<strong>Sagan</strong> (<%= link_to 'http://sagan.softwink.com', 'http://sagan.softwink.com', :target => '_blank' %>)
 					</li>
 					<li><strong>GIT</strong> (<%= link_to 'http://git-scm.com', 'http://git-scm.com', :target => '_blank' %>)</li>
@@ -212,23 +157,23 @@
 					<li><strong>ImageMagick</strong> ~> 6.6.4 (<%= link_to 'http://www.imagemagick.org', 'http://www.imagemagick.org', :target => '_blank' %>)</li>
 					<li><strong>Wkhtmltopdf</strong> (<%= link_to 'http://code.google.com/p/wkhtmltopdf', 'http://code.google.com/p/wkhtmltopdf', :target => '_blank' %>)</li>
 				</ul>
-				
+
 				<div class='note grid_12'>
 					Most of the above can be installed via your packaging manager of choice. (apt, yum, brew, ports etc.)
 				</div>
-				
+
 			</div>
-			
+
 		</div>
-		
+
 		<div id='box' class='grid_12 alpha last'>
-			
+
 			<h2>Get The Code & Dependencies</h2>
-			
+
 			<div class='content'>
-				
+
 				You can download the current version of Snorby <%= link_to 'here', Snorbyorg::Versions.snorby_download %> in a `.zip` archive. Or you can pull the latest code from from the master branch on github.
-				
+
 				<pre class='code'>$ git clone http://github.com/Snorby/snorby.git</pre>
 
         Once snorby has be downloaded successfully you will need to install a few dependencies before you start to edit the configuration files.
@@ -238,21 +183,21 @@
         <div class='note grid_12'>This assumes ruby and ruby gems is installed properly. If bundler is not found `gem install bundler`</div>
 
 			</div>
-			
+
 		</div>
-		
-		
+
+
 		<div id='box' class='grid_12 alpha last'>
-			
+
 			<h2>Edit The Snorby Configurations</h2>
-			
+
 			<div class='content'>
-			
+
 				There are three configuration files that will need to be modified for everything to work correctly.<br />
 				<br />
-				
+
 				<h3>Snorby Database Configurations - config/database.yml</h3>
-				
+
 <pre class='code'>
 # Snorby Database Configuration
 #
@@ -275,17 +220,17 @@ test:
 production:
   database: snorby
   <<: *snorby</pre>
-				
+
 				<br />
-				
+
 				<h3>Snorby System Configurations - config/snorby_config.yml</h3>
-				
+
 <pre class='code'>
 development:
   domain: localhost:3000
   wkhtmltopdf: /Users/mephux/.rvm/gems/ruby-1.9.2-p0/bin/wkhtmltopdf
   mailer_sender: 'snorby@snorby.org'
-  rules: 
+  rules:
     - "/Users/mephux/.snort/rules"
     - "/Users/mephux/.snort/so_rules"
 
@@ -294,7 +239,7 @@ test:
   wkhtmltopdf: /usr/local/bin/wkhtmltopdf
   mailer_sender: 'snorby@snorby.org'
 
-# Change the production configuration 
+# Change the production configuration
 # for your environment.
 production:
   domain: 'demo.snorby.org'
@@ -308,13 +253,13 @@ production:
 				<br />
 
 				<h3>Snorby Mail Configurations - config/initializers/mail_config.rb</h3>
-				
+
 <pre class='code'>
 # Snorby Mail Configuration
 
 # # #
 # Gmail Example:
-# 
+#
 # ActionMailer::Base.delivery_method = :smtp
 # ActionMailer::Base.smtp_settings = {
 #   :address              => "smtp.gmail.com",
@@ -328,7 +273,7 @@ production:
 
 # # #
 # Sendmail Example:
-# 
+#
 # ActionMailer::Base.delivery_method = :sendmail
 # ActionMailer::Base.sendmail_settings = {
 #   :location => '/usr/sbin/sendmail',
@@ -340,15 +285,15 @@ ActionMailer::Base.raise_delivery_errors = true
 
 # Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 </pre>
-				
+
 			<div class='note grid_12'>This is usually only relevant if you want to use an external smtp server to send Snorby Mail. .e.g. Gmail</div>
-				
+
 			</div>
-			
+
 		</div>
 
 		<div id='box' class='grid_12 alpha last'>
-			
+
 			<h2>Start Snorby</h2>
 
 			<div class='content'>
@@ -362,7 +307,7 @@ ActionMailer::Base.raise_delivery_errors = true
 
       <pre class="code">bundle exec rails server -e production</pre>
       <pre class="code">ruby script/delayed_job start RAILS_ENV=production</pre>
-	
+
       <div class='note grid_12'>It is very important that you always remember to start Snorby in production mode.</div><br />
 
       <br />
@@ -376,33 +321,33 @@ ActionMailer::Base.raise_delivery_errors = true
       <ul>
         <li>Username: <strong>snorby@snorby.org</strong></li>
         <li>Password: <strong>snorby</strong></li>
-      </ul> 
+      </ul>
 
       <br />
 
 			There are a few ways you can start/use snorby but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
 			<br />
-			
+
 
 			</div>
-			
+
 		</div>
-		
+
 	</div>
 
   <div class="block">
-		
+
 		<h1 id='source'>
 			Snorby <span>Source</span> Code
 			<div class='top'></div>
 		</h1>
-		
+
     <div id='box' class='snorby-source-code'>
     </div>
   </div>
 
 	<div class='block'>
-		
+
 		<h1 id='demo'>
 			<span>Try</span> The Demo
 			<div class='top'></div>
@@ -411,25 +356,25 @@ ActionMailer::Base.raise_delivery_errors = true
 		<div id='box' class='grid_12 alpha last'>
 
 			<div class='content'>
-				
+
 				We have configured and deployed a fully functional Snorby installation for your evaluation. The demo account has full administrative privileges so that all available snorby features are visible; however, you will not be able to modify system settings.<br />
-				
+
 				<br />
-				
+
 				<ul>
 					<li>URL: <strong><%= link_to 'http://demo.snorby.org', 'http://demo.snorby.org', :target => '_blank' %></strong></li>
 					<li>Username: <strong>demo@snorby.org</strong></li>
 					<li>Password: <strong>snorby</strong></li>
 				</ul>
-				
+
 			</div>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class='block'>
-		
+
 		<h1 id='support'>
 			<span>Support</span> & Questions
 			<div class='top'></div>
@@ -470,21 +415,21 @@ ActionMailer::Base.raise_delivery_errors = true
 			</div>
 
 		</div>
-		
+
 	</div>
-	
+
 	<div class="block">
-		
+
 		<h1 id=''>
 			<span>Follow</span> us on Twitter
 			<div class='top'></div>
 		</h1>
-		
+
 		<div id='twitter' class="content">
 
 		</div>
 	</div>
-	
+
    </div>
   </div>
 </div>

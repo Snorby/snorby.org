@@ -5,7 +5,7 @@ Snorbyorg::Application.routes.draw do
 
   match "/version", :controller => 'Pages', :action => 'version'
   match "/redirect", :controller => 'Pages', :action => 'redirect'
-  match "/iphone", :controller => 'Pages', :action => 'iphone'
+  match "/iphone", :controller => 'Pages', :action => 'iphone', :as => 'iphone'
   match "/redirect-security-onion", :controller => 'Pages', :action => 'redirect_security_onion'
 
   root :to => "pages#home"

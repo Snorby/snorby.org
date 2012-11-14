@@ -243,6 +243,14 @@ $(document).ready(function() {
 	Snorbyorg.tooltips();
 	Snorbyorg.twitter();
 
+  $("#slides").slides({
+    effect: 'fade',
+    play: 5000,
+  });
+
+  $('#slides ul.pagination li').live('click', function() {
+    $(this).children('a').click();
+  });
 
   $('#video').live('click', function(event) {
     event.preventDefault();

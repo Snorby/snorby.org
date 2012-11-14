@@ -12,6 +12,7 @@ javascripts:
     - public/javascripts/twitter.js
     - public/javascripts/modernizr.js
     - public/javascripts/snorbyorg.js
+    - public/javascripts/slides.jquery.js
 
 stylesheets:
   snorby:

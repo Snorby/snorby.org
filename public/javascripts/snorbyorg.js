@@ -244,16 +244,48 @@ $(document).ready(function() {
 	Snorbyorg.twitter();
 
   $("#slides").slides({
-    effect: 'fade',
-    play: 5000,
+    width: 1020,
+    height: 400,
+    playInterval: 5000,
+    navigation: false,
+    effects: {
+      navigation: "fade",  // [String] Can be either "slide" or "fade"
+      pagination: "fade" // [String] Can be either "slide" or "fade"
+    },
+    fade: {
+     interval: 500, // [Number] Interval of fade in milliseconds
+     crossfade: true, // [Boolean] TODO: add this feature. Crossfade the slides, great for images, bad for text
+     easing: "" // [String] Dependency: jQuery Easing plug-in <http://gsgd.co.uk/sandbox/jquery/easing/>
+    }
   });
+  var slideTimeout = setTimeout(function(){
+    $("#slides").slides("play");
+  }, 5000);
 
-  $('#slides ul.pagination li').live('click', function() {
+  var videoPlaying = false
+
+
+  $("#slides").hover(
+      function(){$(this).slides("stop"); clearTimeout(slideTimeout)},
+      function(){
+        if(!videoPlaying) {
+          slideTimeout = setTimeout(function(){$("#slides").slides("play")}, 5000);
+        }
+      }
+  );
+
+  $('#slides ul.slidesPagination li').live('click', function() {
     $(this).children('a').click();
   });
 
   $('#video').live('click', function(event) {
+    videoPlaying = true;
     event.preventDefault();
+    $("#slides").slides("stop");
+    slideInterval = setInterval(function(){
+      console.log('word');
+      $("#slides").slides("stop");
+    }, 1000);
     var $close = $('<div id="close-video" />').html('X Close Video');
     var $video = $('div#intro-video');
     var iframe = '<iframe src="http://player.vimeo.com/video/28555144?title' +
@@ -268,13 +300,15 @@ $(document).ready(function() {
       });
     } else {
       $video.fadeIn('slow', function() {
-        $('#info-box .inside').prepend($close);
+        $('div.snorby-slide').prepend($close);
       }).html(iframe);
     };
   });
 
   $('div#close-video').live('click', function(event) {
     event.preventDefault();
+    videoPlaying = false;
+    clearInterval(slideInterval);
     var $video = $('div#intro-video');
     $(this).remove();
     $video.fadeOut('slow', function() {
@@ -283,6 +317,13 @@ $(document).ready(function() {
   });
 
   $('.clickme').live('click', function(event) {
+    event.preventDefault();
+    if ($(this).attr('data-href')) {
+      window.location = $(this).attr('data-href');
+    };
+  });
+
+  $('button#app-store').live('click', function(){
     event.preventDefault();
     if ($(this).attr('data-href')) {
       window.location = $(this).attr('data-href');

@@ -1,11 +1,8 @@
 <div id="info-box">
   <div class="inside">
     <div id="slides">
-      <div class="slides_container">
-        <div><%= render 'pages/slide_snorby' %></div>
-        <div><%= render 'pages/slide_iphone' %></div>
-        <div><%= render 'pages/slide_packetstash' %></div>
-      </div>
+      <div class="iphone-slide"><%= render 'pages/slide_iphone' %></div>
+      <div class="snorby-slide"><%= render 'pages/slide_snorby' %></div>
     </div>
   </div>
 </div>
@@ -176,11 +173,11 @@
 
 				<pre class='code'>$ git clone http://github.com/Snorby/snorby.git</pre>
 
-        Once snorby has be downloaded successfully you will need to install a few dependencies before you start to edit the configuration files.
+        Once Snorby has been downloaded successfully, you will need to install a few dependencies before you start to edit the configuration files.
 
         <pre class='code'>cd snorby && bundle install</pre>
 
-        <div class='note grid_12'>This assumes ruby and ruby gems is installed properly. If bundler is not found `gem install bundler`</div>
+        <div class='note grid_12'>This assumes ruby and ruby gems are installed. If bundler is not found `gem install bundler`</div>
 
 			</div>
 
@@ -325,7 +322,7 @@ ActionMailer::Base.raise_delivery_errors = true
 
       <br />
 
-			There are a few ways you can start/use snorby but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
+			There are a few ways you can start/use snorby, but we highly recommend that you use <%= link_to 'Phusion Passenger', 'http://www.modrails.com' %> which supports both <%= link_to 'Apache', 'http://httpd.apache.org/' %> and <%= link_to 'Nginx', 'http://www.nginx.net/' %> web servers.<br />
 			<br />
 
 
@@ -334,17 +331,6 @@ ActionMailer::Base.raise_delivery_errors = true
 		</div>
 
 	</div>
-
-  <div class="block">
-
-		<h1 id='source'>
-			Snorby <span>Source</span> Code
-			<div class='top'></div>
-		</h1>
-
-    <div id='box' class='snorby-source-code'>
-    </div>
-  </div>
 
 	<div class='block'>
 
@@ -417,19 +403,6 @@ ActionMailer::Base.raise_delivery_errors = true
 		</div>
 
 	</div>
-
-	<div class="block">
-
-		<h1 id=''>
-			<span>Follow</span> us on Twitter
-			<div class='top'></div>
-		</h1>
-
-		<div id='twitter' class="content">
-
-		</div>
-	</div>
-
    </div>
   </div>
 </div>

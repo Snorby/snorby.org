@@ -674,7 +674,6 @@ pre.code{
 	overflow: visible;
 	border-bottom: 1px solid #000;
 	padding-top: 0;
-	padding-bottom: 19px;
 }
 
 #info-box .inside{
@@ -690,6 +689,13 @@ pre.code{
 	width: 1020px;
 	height: 400px;
 	background: url(../images/welcome/welcome-bg.png) no-repeat;
+	margin: auto;
+}
+
+#info-box .inside #iphone-images{
+	width: 1020px;
+	height: 400px;
+	background: url(../images/welcome/iphone-bg.png) no-repeat;
 	margin: auto;
 }
 
@@ -782,6 +788,15 @@ pre.code{
 	background-position: -328px -87px;
 	float: left;
 	width: 165px;
+}
+
+
+#info-box .inside #downloads button#app-store{
+	background: url('../images/appstore-icon.png') no-repeat;
+	background-size: 200px;
+	left: 495px;
+	top: -29px ;
+	width: 300px;
 }
 
 div.info-popup{
@@ -1044,27 +1059,26 @@ div.iphone-app ul {
 /* end */
 
 /* @group Slider */
-ul.pagination {
+ul.slidesPagination {
 	position: absolute;
-	left: 528px;
-	bottom: -20px;
+	left: -20px;
+	top: 45px;
 	cursor: pointer;
 }
 
-ul.pagination li {
+ul.slidesPagination li {
 	overflow: hidden;
-	display: inline-block;
 	border: 1px solid #999;
 	background: #222;
 	width: 8px;
 	height: 8px;
 	border-radius: 40px;
-	margin-right: 7px;
+	margin-bottom: 7px;
 	box-shadow: 1px 1px 1px 0 black;
 	text-indent: -9999px;
 }
 
-ul.pagination li.current {
+ul.slidesPagination li.slidesCurrent {
 	border: none;
 	width: 10px;
 	height: 10px;

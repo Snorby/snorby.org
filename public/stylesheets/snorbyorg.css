@@ -696,6 +696,7 @@ pre.code{
 	width: 1020px;
 	height: 400px;
 	background: url(../images/welcome/iphone-bg.png) no-repeat;
+	background-size: 1024px 400px;
 	margin: auto;
 }
 

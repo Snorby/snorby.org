@@ -795,8 +795,9 @@ pre.code{
 #info-box .inside #downloads button#app-store{
 	background: url('../images/appstore-icon.png') no-repeat;
 	background-size: 200px;
+	position: absolute;
 	left: 495px;
-	top: -29px ;
+	top: -40px ;
 	width: 300px;
 }
 

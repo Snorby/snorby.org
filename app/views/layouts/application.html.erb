@@ -11,13 +11,13 @@
 
     <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie|Muli' rel='stylesheet' type='text/css'>
 
-		<%= include_stylesheets :snorby, :media => 'all' %>
-		<%= include_javascripts :snorby %>
+		<%= include_stylesheets :snorbyorg, :media => 'all' %>
+		<%= include_javascripts :snorbyorg %>
     <%= csrf_meta_tag %>
 
 		<%= yield(:header) %>
   </head>
-  
+
 	<body>
 
     <div id='header'>
@@ -26,7 +26,7 @@
       <div class="container_12">
         <div class="grid_11">
           <p>
-            Are you using Snorby in production? We would love to hear from you! 
+            Are you using Snorby in production? We would love to hear from you!
             Send us a message about your setup and feature requests.
             <strong><a href="mailto:support@snorby.org">support@snorby.org</a></strong>
           </p>
@@ -38,43 +38,42 @@
       </div>
     </section>
 
-			
+
 			<div id='menu'>
-				
+
 				<div id='menu-inside' class='container_12'>
-				
+
           <div id="logo">
             <a href="/"></a>
           </div>
-	
+
 					<ul>
-						<li class='first'><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>						
+						<li class='first'><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>
 						<li class=''><%= link_to "Support", '#support', :class => 'scroll' %></li>
-            <li class=''><%= link_to "Source", '#source', :class => 'scroll' %></li>
 						<li class=''><%= link_to "Wiki", 'https://github.com/Snorby/snorby/wiki', :target => '_blank' %></li>
             <li class=''><%= link_to "Blog", 'http://blog.snorby.org', :target => '_blank' %></li>
 						<li class=''><%= link_to "DEMO", '#demo', :class => 'scroll' %></li>
 						<li class=''><%= link_to "Install", '#installation', :class => 'scroll' %></li>
 					</ul>
-					
+
 				</div>
-				
+
 			</div>
-			
+
 			<%= yield(:welcome) %>
-			
+
 		</div>
-		
+
 		<div id='wrapper'>
-			
+
 			<div id='content' class='container_6'>
 
 				<%= yield %>
-				
+
 			</div>
-			
+
 		</div>
-		
+
 		<div id='footer'>
       <div class="inside">
 
@@ -85,7 +84,7 @@
           <li><%= link_to "Docs & Wiki", 'https://github.com/Snorby/snorby/wiki', :target => '_blank' %></li>
           <li><%= link_to "Support", '#support', :class => 'scroll' %></li>
           <li><%= link_to "Submit Bugs", 'https://github.com/Snorby/snorby/issues', :target => '_blank' %></li>
-          <li><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>						
+          <li><%= link_to "Other Projects", 'http://www.lookycode.com', :target => '_blank' %></li>
         </ul>
 
         <ul class="column">
@@ -122,7 +121,7 @@
         </ul>
 
 
-      </div>			
+      </div>
 
 
       <div id="copyright">
@@ -137,15 +136,15 @@
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 		</script>
-		
+
 		<script type="text/javascript">
 			try {
 				var pageTracker = _gat._getTracker("UA-9749692-1");
-				pageTracker._trackPageview(); 
+				pageTracker._trackPageview();
 			} catch(err) {}
 		</script>
-		
+
 		<%= yield(:footer) %>
-		
-  </body> 
+
+  </body>
 </html>

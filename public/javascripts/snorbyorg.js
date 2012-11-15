@@ -11,46 +11,46 @@ function openModal()
     transtitionSupport();
     if( browserCSSPrefix == "" )
     {
-    
+
         $('#top_bar').animate(
         {
             'margin-top': '0'
-        }, 400, function() 
+        }, 400, function()
         {
         // Animation complete.
         });
     }
-    
+
     else
     {
-    
+
         var animName = "openModal";
-    
+
         insertCSSAnimation(animName, {
-        0 : prefix({ 
-        "margin-top" : "-27px", 
+        0 : prefix({
+        "margin-top" : "-27px",
         }),
-        50 : prefix({ 
+        50 : prefix({
         "margin-top" : "0px",
         "padding-top" : "25px",
         }),
-        100 : prefix({ 
+        100 : prefix({
         "margin-top" : "0px",
         "padding-top" : "8px",
         })
         });
-        
+
         $('#top-bar').css(prefix({
         "animation":animName + " 1s cubic-bezier(.2,.6,.3,1)"
         }))
         .bind(animationEndEvent, function(e){
-        if(e.originalEvent.animationName == animName) 
+        if(e.originalEvent.animationName == animName)
         {
             $('#top-bar').css({ "margin-top" : "0" });
         }
         });
     }
-    
+
 }
 
 function closeModal() {
@@ -59,55 +59,55 @@ function closeModal() {
         $('#top-bar').animate(
         {
             'margin-top':'-27px'
-        }, 400, function() 
+        }, 400, function()
         {
             showFanion();
         });
     } else {
-    
+
         var animName = "closeModal";
-    
+
         insertCSSAnimation(animName, {
-        0 : prefix({ 
+        0 : prefix({
         "margin-top" : "0px",
-        "padding-top" : "8px", 
+        "padding-top" : "8px",
         }),
-        50 : prefix({ 
+        50 : prefix({
         "margin-top" : "0px",
         "padding-top" : "25px",
         }),
-        100 : prefix({ 
+        100 : prefix({
         "margin-top" : "-27px",
         "padding-top" : "8px",
         })
         });
-        
+
         $('#top-bar').css(prefix({
         "animation":animName + " 1s cubic-bezier(.2,.6,.3,1)"
         }))
         .bind(animationEndEvent, function(e){
-        if(e.originalEvent.animationName == animName) 
+        if(e.originalEvent.animationName == animName)
         {
             $('#top-bar').css({ "margin-top" : "-27px" });
         }
         });
     }
-    
+
 }
 
-function prefix(obj) 
+function prefix(obj)
 {
-        if(obj instanceof Object) 
+        if(obj instanceof Object)
         {
             var dict = obj,
             newDict = {};
-            $.each(dict,function(key , value) 
+            $.each(dict,function(key , value)
             {
                 newDict[prefix(key)] = value;
             });
             return newDict;
         }
-    
+
     if([
     "transform",
     "animation",
@@ -122,13 +122,13 @@ function prefix(obj)
     return obj;
 }
 
-function insertCSSAnimation(name, properties) 
+function insertCSSAnimation(name, properties)
 {
         var anim = "@" + browserCSSPrefix + "keyframes " + name + " {\n";
-        $.each(properties, function(progress, props) 
+        $.each(properties, function(progress, props)
         {
             anim += "\t" + progress + "% {\n";
-            $.each(props,function(key , value) 
+            $.each(props,function(key , value)
             {
                 anim += "\t\t" + key + ":" + value + ";\n";
             })
@@ -143,13 +143,13 @@ function transtitionSupport() {
     thisStyle = thisBody.style,
     support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
     if( support == false )
-    { 
+    {
         browserCSSPrefix = "";
     }
 };
 
 var Snorbyorg = {
-	
+
 	tooltips: function(){
 		$('.show-popup').each(function () {
 		    var distance = 10;
@@ -168,12 +168,12 @@ var Snorbyorg = {
           });
 
 		      if (hideDelayTimer) clearTimeout(hideDelayTimer);
-		
+
 		      if (beingShown || shown) {
 		        return;
 		      } else {
 		        beingShown = true;
-		
+
 		        popup.css({
               zIndex: 999999,
 		          top: -160,
@@ -206,23 +206,23 @@ var Snorbyorg = {
 		    });
 		  });
 	},
-	
+
 	page_scroll: function(){
-		
+
 		$('div.top').live('click', function(e) {
 			e.preventDefault();
 			$.scrollTo('#top-bar', 500);
 			return false;
 		});
-		
+
 		$('#menu-inside ul li a.scroll').click(function(e) {
 			e.preventDefault();
 			$.scrollTo($(this).attr('href'), 500);
 			return false;
 		});
-		
+
 	},
-	
+
 	twitter: function(){
 	  $("#twitter").getTwitter({
 	    userName: "mephux",
@@ -232,24 +232,64 @@ var Snorbyorg = {
 	    showHeading: false,
 	    headingText: "Latest Tweets",
 	    showProfileLink: true
-	  });	
+	  });
 	}
-	
+
 }
 
 $(document).ready(function() {
-	
+
 	Snorbyorg.page_scroll();
 	Snorbyorg.tooltips();
 	Snorbyorg.twitter();
 
+  $("#slides").slides({
+    width: 1020,
+    height: 400,
+    playInterval: 5000,
+    navigation: false,
+    effects: {
+      navigation: "fade",  // [String] Can be either "slide" or "fade"
+      pagination: "fade" // [String] Can be either "slide" or "fade"
+    },
+    fade: {
+     interval: 500, // [Number] Interval of fade in milliseconds
+     crossfade: true, // [Boolean] TODO: add this feature. Crossfade the slides, great for images, bad for text
+     easing: "" // [String] Dependency: jQuery Easing plug-in <http://gsgd.co.uk/sandbox/jquery/easing/>
+    }
+  });
+  var slideTimeout = setTimeout(function(){
+    $("#slides").slides("play");
+  }, 5000);
+
+  var videoPlaying = false
+
+
+  $("#slides").hover(
+      function(){$(this).slides("stop"); clearTimeout(slideTimeout)},
+      function(){
+        if(!videoPlaying) {
+          slideTimeout = setTimeout(function(){$("#slides").slides("play")}, 5000);
+        }
+      }
+  );
+
+  $('#slides ul.slidesPagination li').live('click', function() {
+    $(this).children('a').click();
+  });
 
   $('#video').live('click', function(event) {
+    videoPlaying = true;
     event.preventDefault();
+    $("#slides").slides("stop");
+    slideInterval = setInterval(function(){
+      console.log('word');
+      $("#slides").slides("stop");
+    }, 1000);
     var $close = $('<div id="close-video" />').html('X Close Video');
     var $video = $('div#intro-video');
     var iframe = '<iframe src="http://player.vimeo.com/video/28555144?title' +
-    '=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="440" height=' + 
+    '=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="440" height=' +
     '"333" frameborder="0"></iframe>';
 
     $('#close-video').remove();
@@ -260,13 +300,15 @@ $(document).ready(function() {
       });
     } else {
       $video.fadeIn('slow', function() {
-        $('#info-box .inside').prepend($close);
+        $('div.snorby-slide').prepend($close);
       }).html(iframe);
     };
   });
 
   $('div#close-video').live('click', function(event) {
     event.preventDefault();
+    videoPlaying = false;
+    clearInterval(slideInterval);
     var $video = $('div#intro-video');
     $(this).remove();
     $video.fadeOut('slow', function() {
@@ -275,6 +317,13 @@ $(document).ready(function() {
   });
 
   $('.clickme').live('click', function(event) {
+    event.preventDefault();
+    if ($(this).attr('data-href')) {
+      window.location = $(this).attr('data-href');
+    };
+  });
+
+  $('button#app-store').live('click', function(event){
     event.preventDefault();
     if ($(this).attr('data-href')) {
       window.location = $(this).attr('data-href');
@@ -293,7 +342,7 @@ $(document).ready(function() {
 
 
        // Helpers
-    if($.browser.webkit) 
+    if($.browser.webkit)
     {
         browserCSSPrefix = "-webkit-";
         animationEndEvent = "webkitAnimationEnd";
@@ -302,18 +351,18 @@ $(document).ready(function() {
     browserCSSPrefix = "-moz-";
     else if($.browser.opera)
     browserCSSPrefix = "-o-";
-    
+
 
   window.setTimeout(function() {
       openModal();
   }, 500);
-            
+
 
   $('a.close').live('click', function(event) {
     event.preventDefault();
     closeModal();
   });
 
-  $('body div.snorby-source-code').repo({ user: 'snorby', name: 'snorby', branch: 'master' });
+  // $('body div.snorby-source-code').repo({ user: 'snorby', name: 'snorby', branch: 'master' });
 
 });

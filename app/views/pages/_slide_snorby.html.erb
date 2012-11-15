@@ -1,0 +1,42 @@
+<div id="images"></div>
+<div id="video" style=''>
+  <div id="intro-video" style='display:none;'></div>
+</div>
+<div id="current-version"
+  data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'
+  class='clickme'>
+  <%= Snorbyorg::Versions.snorby %>
+</div>
+<div id="downloads">
+  <div class="info-popup show-popup">
+    <div id='snorby-popup' class="popup">
+      <h4>Snorby Source Code</h4>
+      Version: <%= Snorbyorg::Versions.data[:version] %><br />
+      Date: <%= Snorbyorg::Versions.data[:date] %><br />
+      Size: <%= Snorbyorg::Versions.data[:size] %><br />
+      MD5: <%= Snorbyorg::Versions.data[:md5] %><br />
+      <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+    </div>
+    <button id="snorby" class='clickme trigger'
+    data-href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'>
+      Snorby Source<span></span>
+    </button>
+  </div>
+  <div class="info-popup show-popup">
+    <div id='security-onion-popup' class="popup">
+      <h4>Security Onion</h4>
+      For more information on Security Onion <br /> and download links, please visit <br />the following url.<br /><br />
+      <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %>
+      <br />
+    </div>
+    <button id="security-onion" class='clickme trigger'
+    data-href='/redirect-security-onion?security_onion=true'>
+    Security Onion<span></span></button>
+  </div>
+    <div class="info-popup">
+    <button id="submit-bugs" class='clickme'
+     data-href='https://github.com/Snorby/snorby/issues?milestone=&labels='>
+    Submit Bugs<span></span>
+    </button>
+  </div>
+</div>

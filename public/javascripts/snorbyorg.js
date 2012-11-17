@@ -278,12 +278,25 @@ $(document).ready(function() {
     $(this).children('a').click();
   });
 
+  $(document).keydown(function (e) {
+  var keyCode = e.keyCode || e.which,
+      arrow = {left: 37, up: 38, right: 39, down: 40 };
+
+  switch (keyCode) {
+    case arrow.left:
+      $("#slides").slides("previous");
+    break;
+    case arrow.right:
+      $("#slides").slides("next");
+    break;
+  }
+});
+
   $('#video').live('click', function(event) {
     videoPlaying = true;
     event.preventDefault();
     $("#slides").slides("stop");
     slideInterval = setInterval(function(){
-      console.log('word');
       $("#slides").slides("stop");
     }, 1000);
     var $close = $('<div id="close-video" />').html('X Close Video');

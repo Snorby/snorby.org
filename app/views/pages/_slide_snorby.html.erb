@@ -23,15 +23,18 @@
     </button>
   </div>
   <div class="info-popup show-popup">
-    <div id='security-onion-popup' class="popup">
-      <h4>Security Onion</h4>
-      For more information on Security Onion <br /> and download links, please visit <br />the following url.<br /><br />
-      <%= link_to "http://securityonion.blogspot.com/", 'http://securityonion.blogspot.com/', :target => '_blank' %>
+    <div id='snorby-cloud-popup' class="popup">
+      <h4>Snorby Cloud</h4>
+      Snorby Cloud is an instantly deployable,<br> usable, and hassle free Security
+      Monitoring solution. For more information on <br> Snorby Cloud please visit
+      the following url.
+      <%= link_to "https://cloud.snorby.org/", 'https://cloud.snorby.org/',
+       :target => '_blank' %>
       <br />
     </div>
-    <button id="security-onion" class='clickme trigger'
-    data-href='/redirect-security-onion?security_onion=true'>
-    Security Onion<span></span></button>
+    <button id="snorby-cloud-button" class='clickme trigger'
+    data-href='https://cloud.snorby.org'>
+    Snorby Cloud<span></span></button>
   </div>
     <div class="info-popup">
     <button id="submit-bugs" class='clickme'

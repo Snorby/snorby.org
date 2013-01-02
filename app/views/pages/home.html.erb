@@ -109,13 +109,15 @@
 
 		<div id='box' class='grid_12 alpha last'>
 
-        Currently there are two ways to install/deploy the Snorby web application.
+        Currently there are two popular ways to install/deploy the
+        Snorby web application.
 
         The first option is to install and configure Snorby from source.
 
-        Second is to use <%= link_to 'Security Onion', Snorbyorg::Versions.security_onion_download %>, a free instant NSM appliance
-        featuring Snorby 2.5.1, Snort/Suricata, Barnyard, Daemonlogger, and Pulled Pork. Security Onion does not yet support the Snorby full packet capture api but is
-        in the works. To have full packet capabilities with Snorby we suggest installing from source and using OpenFPC or StreamDB.
+        Second is to let us do it for you using
+        <%= link_to 'Snorby Cloud', 'https://cloud.snorby.org' %>,
+        a fully-featured host and network based intrusion detection and
+        incident response system by the creators of Snorby.
 
         Below is a quick and dirty step-by-step tutorial for deploying Snorby from source.
         Also, please remember to check the <%= link_to 'wiki', 'https://github.com/Snorby/snorby/wiki' %> for

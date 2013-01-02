@@ -24,8 +24,8 @@ class PagesController < ApplicationController
     redirect_to "https://github.com/Snorby/snorby/zipball/v#{Snorbyorg::Versions.snorby}"
   end
 
-  def redirect_security_onion
-    redirect_to "http://code.google.com/p/security-onion/wiki/Installation"
+  def redirect_snorby_cloud
+    redirect_to "https://cloud.snorby.org"
   end
 
 end

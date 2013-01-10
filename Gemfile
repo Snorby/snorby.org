@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-RAILS_VERSION = '~> 3.0.3'
+RAILS_VERSION = '~> 3.0.19'
 
 gem 'rails',                  RAILS_VERSION
 gem 'mysql2', '< 0.3'

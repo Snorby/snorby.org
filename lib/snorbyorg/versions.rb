@@ -7,7 +7,7 @@ module Snorbyorg
     def self.data
       @data ||= {
         :md5 => 'cb543ee9ade45bc1a069b31c57f990f5',
-        :date => '01/09/2012',
+        :date => '01/28/2012',
         :size => '1.6 MB',
         :version => self.snorby
       }
@@ -16,7 +16,7 @@ module Snorbyorg
     end
 
     def self.snorby
-      '2.5.4'
+      '2.5.6'
     end
 
     def self.snorby_download

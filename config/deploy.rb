@@ -5,6 +5,7 @@ set :domain, '173.255.236.165'
 role :app, domain
 role :web, domain
 role :db,  domain
+set :port, 2222
 
 set :user, 'deploy'
 set :deploy_to, "/var/www/apps/#{application}"

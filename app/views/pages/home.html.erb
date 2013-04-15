@@ -112,10 +112,8 @@
       <p>Snorby is licensed under GPLv3.</p>
       <br />
 
-      <a id="current-version"
-        href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'
-        class='clickme'>
-        Download Snorby Version <%= Snorbyorg::Versions.snorby %>
+      <a href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'>
+        Download Snorby (snorby-<%= Snorbyorg::Versions.data[:version] %>.<%= Snorbyorg::Versions.data[:type] %>)
       </a>
       <br />
       <br />

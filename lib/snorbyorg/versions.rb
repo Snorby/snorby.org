@@ -7,8 +7,9 @@ module Snorbyorg
     def self.data
       @data ||= {
         :md5 => 'cb543ee9ade45bc1a069b31c57f990f5',
-        :date => '04/08/2013',
-        :size => '1.6 MB',
+        :date => '04/15/2013',
+        :size => '1.3 MB',
+        :type => "tar.gz",
         :version => self.snorby
       }
 
@@ -20,7 +21,7 @@ module Snorbyorg
     end
 
     def self.snorby_download
-      "https://github.com/Snorby/snorby/zipball/v#{Snorbyorg::Versions.snorby}"
+      "https://github.com/Snorby/snorby/archive/v#{Snorbyorg::Versions.snorby}.tar.gz"
     end
 
   end

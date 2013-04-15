@@ -12,7 +12,8 @@ class PagesController < ApplicationController
       :download => Snorbyorg::Versions.snorby_download,
       :md5 => Snorbyorg::Versions.data[:md5],
       :size => Snorbyorg::Versions.data[:size],
-      :date => Snorbyorg::Versions.data[:date]
+      :date => Snorbyorg::Versions.data[:date],
+      :type => Snorbyorg::Versions.data[:type],
     }, :callback => params[:callback]
   end
 
@@ -21,7 +22,7 @@ class PagesController < ApplicationController
   end
 
   def redirect
-    redirect_to "https://github.com/Snorby/snorby/zipball/v#{Snorbyorg::Versions.snorby}"
+    redirect_to "#{Snorbyorg::Versions.snorby_download}" 
   end
 
   def redirect_snorby_cloud

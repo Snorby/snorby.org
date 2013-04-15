@@ -703,7 +703,7 @@ pre.code{
 #info-box .inside #cloud-images{
 	width: 1020px;
 	height: 400px;
-	background: url(../images/welcome/cloud-bg.png) no-repeat;
+	background: url(../images/welcome/threatstack-bg.png) no-repeat;
 	background-size: 1024px 400px;
 	margin: auto;
 }
@@ -736,6 +736,15 @@ pre.code{
 	line-height: 96px;
 	top: 296px;
 	left: 7px;
+}
+
+#threat-stack-link span {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 525px;
+	cursor: pointer;
 }
 
 #info-box .inside #downloads button{

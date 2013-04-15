@@ -1,8 +1,8 @@
 <div id="info-box">
   <div class="inside">
     <div id="slides">
-      <div class="iphone-slide" style="display:none"><%= render 'pages/slide_iphone' %></div>
       <div class="cloud-slide"><%= render 'pages/slide_cloud' %></div>
+      <div class="iphone-slide" style="display:none"><%= render 'pages/slide_iphone' %></div>
       <div class="snorby-slide" style="display:none"><%= render 'pages/slide_snorby' %></div>
     </div>
   </div>
@@ -100,6 +100,34 @@
 
 		</div>
 	</div>
+
+  <div class="block">
+    <h1 id='download'>
+      <span>Download</span> Snorby Source
+      <div class='top'></div>
+    </h1>
+    <div id='box' class='grid_12 alpha last'>
+      Below you can download the Snorby source code or view the source code online at <a href="https://github.com/snorby/snorby" target="_blank">https://github.com/snorby/snorby</a>.
+
+      <p>Snorby is licensed under GPLv3.</p>
+      <br />
+
+      <a id="current-version"
+        href='/redirect?version=<%= Snorbyorg::Versions.snorby %>'
+        class='clickme'>
+        Download Snorby Version <%= Snorbyorg::Versions.snorby %>
+      </a>
+      <br />
+      <br />
+
+      <h4>Snorby Source Code</h4>
+      Version: <%= Snorbyorg::Versions.data[:version] %><br />
+      Date: <%= Snorbyorg::Versions.data[:date] %><br />
+      Size: <%= Snorbyorg::Versions.data[:size] %><br />
+      MD5: <%= Snorbyorg::Versions.data[:md5] %><br />
+      <%= link_to "View The #{Snorbyorg::Versions.snorby} Release Notes", 'https://github.com/Snorby/snorby/blob/master/ChangeLog.md', :target => '_blank' %>
+    </div>
+  </div>
 
 	<div class="block">
 
